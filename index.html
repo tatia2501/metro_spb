@@ -75,6 +75,9 @@
         
         .line-purple { stroke: #a855f7; }
         .station-purple { stroke: #a855f7; }
+
+        .line-purple { stroke: #8a5f2f; }
+        .station-purple { stroke: #8a5f2f; }
         
         .map-container {
             background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
@@ -97,20 +100,23 @@
         <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 20px 20px;"></div>
         
         <svg viewBox="0 0 900 1200" class="w-full h-auto drop-shadow-2xl" id="metro-map">
-            <!-- Line 1: Red (Kirovsko-Vyborgskaya) - Vertical Left -->
+            <!-- Line 1: Red (Kirovsko-Vyborgskaya) -->
             <path class="metro-line line-red" d="M 600 50 L 600 695 L 200 695 L 200 1110 " />
             
-            <!-- Line 2: Blue (Moskovsko-Petrogradskaya) - Vertical Center -->
+            <!-- Line 2: Blue (Moskovsko-Petrogradskaya) -->
             <path class="metro-line line-blue" d="M 450 50 L 450 1150" />
             
-            <!-- Line 3: Green (Nevsko-Vasileostrovskaya) - Horizontal Top -->
+            <!-- Line 3: Green (Nevsko-Vasileostrovskaya) -->
             <path class="metro-line line-green" d="M 50 150 L 50 580 L 675 580 L 675 1150" />
             
-            <!-- Line 4: Orange (Lakhtinsko-Pravoberezhnaya) - Diagonal Bottom -->
+            <!-- Line 4: Orange (Lakhtinsko-Pravoberezhnaya) -->
             <path class="metro-line line-orange" d="M 100 630 L 790 630 L 790 1030" />
             
-            <!-- Line 5: Purple (Frunzensko-Primorskaya) - Diagonal -->
+            <!-- Line 5: Purple (Frunzensko-Primorskaya) -->
             <path class="metro-line line-purple" d="M 250 100 L 250 600 L 450 630 L 560 790 L 560 1150" />
+
+            <!-- Line 6: Brown (?) -->
+            <path class="metro-line line-brown" d="M 100 910 L 200 910" />
 
             <!-- Stations Line 1 (Red) - Кировско-Выборгская -->
             <g class="station-group" data-line="1" data-color="red">
@@ -300,19 +306,19 @@
 
             <!-- Stations Line 5 (Purple) - Фрунзенско-Приморская -->
             <g class="station-group" data-line="5" data-color="purple">
-                <circle cx="250" cy="100" r="5" class="station station-purple transfer-station" data-name="Комендантский проспект" data-info="Конечная станция на севере." />
+                <circle cx="250" cy="100" r="6" class="station station-purple transfer-station" data-name="Комендантский проспект" data-info="Конечная станция на севере." />
                 <text x="235" y="90" text-anchor="end" class="station-label">Комендантский пр.</text>
                 
-                <circle cx="250" cy="200" r="5" class="station station-purple transfer-station" data-name="Старая Деревня" data-info="Станция в Приморском районе." />
+                <circle cx="250" cy="200" r="6" class="station station-purple transfer-station" data-name="Старая Деревня" data-info="Станция в Приморском районе." />
                 <text x="235" y="190" text-anchor="end" class="station-label">Старая Деревня</text>
                 
-                <circle cx="250" cy="300" r="5" class="station station-purple transfer-station" data-name="Крестовский остров" data-info="На Крестовском острове." />
+                <circle cx="250" cy="300" r="6" class="station station-purple transfer-station" data-name="Крестовский остров" data-info="На Крестовском острове." />
                 <text x="235" y="290" text-anchor="end" class="station-label">Крестовский о-в</text>
                 
-                <circle cx="250" cy="400" r="5" class="station station-purple transfer-station" data-name="Чкаловская" data-info="Станция на Петроградской стороне." />
+                <circle cx="250" cy="400" r="6" class="station station-purple transfer-station" data-name="Чкаловская" data-info="Станция на Петроградской стороне." />
                 <text x="235" y="390" text-anchor="end" class="station-label">Чкаловская</text>
                 
-                <circle cx="250" cy="500" r="5" class="station station-purple transfer-station" data-name="Спортивная" data-info="Рядом стадион Петровский." />
+                <circle cx="250" cy="500" r="6" class="station station-purple transfer-station" data-name="Спортивная" data-info="Рядом стадион Петровский." />
                 <text x="235" y="490" text-anchor="end" class="station-label">Спортивная</text>
                 
                 <circle cx="250" cy="600" r="6" class="station station-purple transfer-station" data-name="Адмиралтейская" data-info="Самая глубокая станция метро." />
@@ -344,6 +350,15 @@
                 
                 <circle cx="560" cy="1150" r="5" class="station station-purple transfer-station" data-name="Шушары" data-info="Конечная станция фиолетовой ветки." />
                 <text x="575" y="1155" class="station-label">Шушары</text>
+            </g>
+
+            <!-- Stations Line 6 (Brown) - ? -->
+            <g class="station-group" data-line="6" data-color="brown">
+                <circle cx="200" cy="830" r="6" class="station station-brown transfer-station" data-name="Путиловская" data-info="" />
+                <text x="200" y="830" text-anchor="middle" class="station-label">Путиловская</text>
+                
+                <circle cx="100" cy="910" r="6" class="station station-brown transfer-station" data-name="Юго-Западная" data-info="" />
+                <text x="100" y="910" text-anchor="middle" class="station-label">Юго-Западная</text>
             </g>
         </svg>
 
