@@ -504,109 +504,15 @@
 
         let currentStation = null;
 
-        // Open modal
-        stations.forEach(station => {
-            station.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const name = this.getAttribute('data-name');
-                
-                // Получаем данные из внешнего объекта
-                const data = STATIONS_DATA[name] || {};
-                
-                const classList = this.classList.value;
-                let color = 'red';
-                if (classList.includes('blue')) color = 'blue';
-                else if (classList.includes('green')) color = 'green';
-                else if (classList.includes('orange')) color = 'orange';
-                else if (classList.includes('purple')) color = 'purple';
-                else if (classList.includes('brown')) color = 'brown';
+        station.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const name = this.getAttribute('data-name');
+    
+        // Переход на страницу станции с параметром
+        window.location.href = `station.html?name=${encodeURIComponent(name)}`;
+});
 
-                currentStation = this;
-                stationName.textContent = name;
-                
-                // Формируем красивый текст из всех полей данных
-                let fullText = `<p class="mb-3">${data.history || "Описание не найдено"}</p>`;
-                
-                if (data.architecture) {
-                    fullText += `<p class="mb-2"><strong>🏛 Архитектура:</strong><br>${data.architecture}</p>`;
-                }
-                if (data.facts && data.facts.length > 0) {
-                    fullText += `<p class="mb-2"><strong>💡 Факты:</strong><ul class="list-disc list-inside">`;
-                    data.facts.forEach(fact => {
-                        fullText += `<li>${fact}</li>`;
-                    });
-                    fullText += `</ul></p>`;
-                }
-                
-                stationInfo.innerHTML = fullText;
-                textEdit.value = data.history || "";
-                
-                lineName.textContent = lineNames[color];
-                lineColor.style.backgroundColor = lineColorsHex[color];
 
-                // Reset to view mode
-                textDisplay.classList.remove('hidden');
-                textEdit.classList.add('hidden');
-                editBtn.classList.remove('hidden');
-                saveBtn.classList.add('hidden');
-
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-                setTimeout(() => {
-                    modalContent.classList.remove('scale-95', 'opacity-0');
-                    modalContent.classList.add('scale-100', 'opacity-100');
-                }, 10);
-            });
-        });
-
-        // Close modal
-        function closeModal() {
-            modalContent.classList.remove('scale-100', 'opacity-100');
-            modalContent.classList.add('scale-95', 'opacity-0');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-            }, 300);
-        }
-
-        closeBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) closeModal();
-        });
-
-        // Edit mode
-        editBtn.addEventListener('click', function() {
-            textDisplay.classList.add('hidden');
-            textEdit.classList.remove('hidden');
-            editBtn.classList.add('hidden');
-            saveBtn.classList.remove('hidden');
-            textEdit.focus();
-        });
-
-        // Save
-        saveBtn.addEventListener('click', function() {
-            const newText = textEdit.value;
-            stationInfo.innerHTML = `<p class="mb-3">${newText}</p>`;
-            if (currentStation) {
-                // Обновляем данные в объекте (опционально)
-                const name = currentStation.getAttribute('data-name');
-                if (STATIONS_DATA[name]) {
-                    STATIONS_DATA[name].history = newText;
-                }
-            }
-            
-            textDisplay.classList.remove('hidden');
-            textEdit.classList.add('hidden');
-            editBtn.classList.remove('hidden');
-            saveBtn.classList.add('hidden');
-        });
-
-        // Keyboard shortcuts
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-                closeModal();
-            }
-        });
     </script>
 </body>
 </html>
