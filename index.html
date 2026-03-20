@@ -95,183 +95,184 @@
     </div>
 
     <!-- Map Container -->
-    <div class="map-container rounded-2xl p-8 shadow-2xl border border-slate-700 relative overflow-hidden max-w-6xl w-full">
+    <div class="map-container rounded-2xl p-1 shadow-2xl border border-slate-700 relative overflow-hidden max-w-6xl w-full">
         <!-- Decorative grid -->
         <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 20px 20px;"></div>
         
         <svg viewBox="0 0 900 1200" class="w-full h-auto drop-shadow-2xl" id="metro-map">
             <!-- Line 1: Red (Kirovsko-Vyborgskaya) -->
-            <path class="metro-line line-red" d="M 600 50 L 600 695 L 200 695 L 200 1110 " />
+            <path class="metro-line line-red" d="M 480 50 L 480 695 L 150 695 L 150 1110 " />
             
             <!-- Line 2: Blue (Moskovsko-Petrogradskaya) -->
-            <path class="metro-line line-blue" d="M 450 50 L 450 1150" />
+            <path class="metro-line line-blue" d="M 330 50 L 330 1150" />
             
             <!-- Line 3: Green (Nevsko-Vasileostrovskaya) -->
-            <path class="metro-line line-green" d="M 50 150 L 50 580 L 675 580 L 675 1150" />
+            <path class="metro-line line-green" d="M 10 150 L 10 580 L 675 580 L 675 1150" />
             
             <!-- Line 4: Orange (Lakhtinsko-Pravoberezhnaya) -->
             <path class="metro-line line-orange" d="M 100 630 L 790 630 L 790 1030" />
             
             <!-- Line 5: Purple (Frunzensko-Primorskaya) -->
-            <path class="metro-line line-purple" d="M 250 100 L 250 600 L 450 630 L 560 790 L 560 1150" />
+            <path class="metro-line line-purple" d="M 150 100 L 150 600 L 330 630 L 460 790 L 460 1150" />
 
             <!-- Line 6: Brown (?) -->
-            <path class="metro-line line-brown" d="M 100 910 L 200 910" />
+            <path class="metro-line line-brown" d="M 10 910 L 150 910" />
 
             <!-- Stations Line 1 (Red) - Кировско-Выборгская -->
             <g class="station-group" data-line="1" data-color="red">
-                <circle cx="600" cy="50" r="6" class="station station-red transfer-station" data-name="Девяткино" data-info="Конечная станция. Пересадка на железнодорожную платформу." />
-                <text x="610" y="50" class="station-label">Девяткино</text>
+                <circle cx="480" cy="50" r="6" class="station station-red transfer-station" data-name="Девяткино" data-info="Конечная станция. Пересадка на железнодорожную платформу." />
+                <text x="490" y="50" class="station-label">Девяткино</text>
                 
-                <circle cx="600" cy="100" r="6" class="station station-red transfer-station" data-name="Гражданский проспект" data-info="Станция в Калининском районе." />
-                <text x="610" y="100" class="station-label">
-    <tspan x="610">Гражданский </tspan>
-    <tspan x="610" dy="18">проспект</tspan>
+                <circle cx="480" cy="100" r="6" class="station station-red transfer-station" data-name="Гражданский проспект" data-info="Станция в Калининском районе." />
+                <text x="490" y="100" class="station-label">
+    <tspan x="490">Гражданский </tspan>
+    <tspan x="490" dy="18">проспект</tspan>
 </text>
                 
-                <circle cx="600" cy="150" r="6" class="station station-red transfer-station" data-name="Академическая" data-info="Названа в честь Академии наук." />
-                <text x="610" y="150" class="station-label">Академическая</text>
+                <circle cx="480" cy="150" r="6" class="station station-red transfer-station" data-name="Академическая" data-info="Названа в честь Академии наук." />
+                <text x="490" y="150" class="station-label">Академическая</text>
                 
-                <circle cx="600" cy="200" r="6" class="station station-red transfer-station" data-name="Политехническая" data-info="Рядом Политехнический университет." />
-                <text x="610" y="200" class="station-label">Политехническая</text>
+                <circle cx="480" cy="200" r="6" class="station station-red transfer-station" data-name="Политехническая" data-info="Рядом Политехнический университет." />
+                <text x="490" y="200" class="station-label">Политехническая</text>
                 
-                <circle cx="600" cy="250" r="6" class="station station-red transfer-station" data-name="Площадь Мужества" data-info="Мемориал героическим защитникам Ленинграда." />
-                <text x="610" y="250" class="station-label">    <tspan x="610">Площадь</tspan>
-    <tspan x="610" dy="1.2em">Мужества</tspan></text>
+                <circle cx="480" cy="250" r="6" class="station station-red transfer-station" data-name="Площадь Мужества" data-info="Мемориал героическим защитникам Ленинграда." />
+                <text x="490" y="250" class="station-label">    <tspan x="490">Площадь</tspan>
+    <tspan x="490" dy="1.2em">Мужества</tspan></text>
                 
-                <circle cx="600" cy="300" r="6" class="station station-red transfer-station" data-name="Лесная" data-info="Станция рядом с Лесным проспектом." />
-                <text x="610" y="300" class="station-label">Лесная</text>
+                <circle cx="480" cy="300" r="6" class="station station-red transfer-station" data-name="Лесная" data-info="Станция рядом с Лесным проспектом." />
+                <text x="490" y="300" class="station-label">Лесная</text>
                 
-                <circle cx="600" cy="350" r="6" class="station station-red transfer-station" data-name="Выборгская" data-info="В историческом районе Выборгская сторона." />
-                <text x="610" y="350" class="station-label">Выборгская</text>
+                <circle cx="480" cy="350" r="6" class="station station-red transfer-station" data-name="Выборгская" data-info="В историческом районе Выборгская сторона." />
+                <text x="490" y="350" class="station-label">Выборгская</text>
                 
-                <circle cx="600" cy="400" r="6" class="station station-red transfer-station" data-name="Площадь Ленина" data-info="Пересадка на ж/д Финляндский вокзал." />
-                <text x="610" y="400" class="station-label">    <tspan x="610">Площадь</tspan>
-    <tspan x="610" dy="1.2em">Ленина</tspan></text>
+                <circle cx="480" cy="400" r="6" class="station station-red transfer-station" data-name="Площадь Ленина" data-info="Пересадка на ж/д Финляндский вокзал." />
+                <text x="490" y="400" class="station-label">    <tspan x="490">Площадь</tspan>
+    <tspan x="490" dy="1.2em">Ленина</tspan></text>
                                 
-                <circle cx="600" cy="460" r="6" class="station station-red transfer-station" data-name="Чернышевская" data-info="Станция в Центральном районе." />
-                <text x="610" y="460" class="station-label">Чернышевская</text>
+                <circle cx="480" cy="460" r="6" class="station station-red transfer-station" data-name="Чернышевская" data-info="Станция в Центральном районе." />
+                <text x="490" y="460" class="station-label">Чернышевская</text>
                                 
-                <circle cx="600" cy="520" r="6" class="station station-red transfer-station" data-name="Площадь Восстания" data-info="Пересадка на ст. Маяковская (зеленая ветка)." />
-                <text x="610" y="520" class="station-label">   
-<tspan x="610">Площадь</tspan>
-    <tspan x="610" dy="15">Восстания</tspan></text>
+                <circle cx="480" cy="520" r="6" class="station station-red transfer-station" data-name="Площадь Восстания" data-info="Пересадка на ст. Маяковская (зеленая ветка)." />
+                <text x="490" y="520" class="station-label">   
+<tspan x="490">Площадь</tspan>
+    <tspan x="490" dy="15">Восстания</tspan></text>
                 
-                <circle cx="600" cy="610" r="6" class="station station-red transfer-station" data-name="Владимирская" data-info="Пересадка на ст. Достоевская (оранжевая ветка)." />
-                <text x="610" y="610" class="station-label">Владимирская</text>
+                <circle cx="480" cy="610" r="6" class="station station-red transfer-station" data-name="Владимирская" data-info="Пересадка на ст. Достоевская (оранжевая ветка)." />
+                <text x="490" y="610" class="station-label">Владимирская</text>
                 
-                <circle cx="495" cy="695" r="6" class="station station-red transfer-station" data-name="Пушкинская" data-info="Пересадка на ст. Звенигородская (фиолетовая ветка)." />
-                <text x="505" y="695" class="station-label">Пушкинская</text>
+                <circle cx="365" cy="695" r="6" class="station station-red transfer-station" data-name="Пушкинская" data-info="Пересадка на ст. Звенигородская (фиолетовая ветка)." />
+                <text x="385" y="695" class="station-label">Пушкинская</text>
                 
-                <circle cx="450" cy="695" r="6" class="station station-red transfer-station" data-name="Технологический институт" data-info="Пересадка на синюю ветку." />
-                <text x="460" y="695" class="station-label">    <tspan x="460">Технологический</tspan>
-    <tspan x="460" dy="1.2em">Институт</tspan></text>
+                <circle cx="330" cy="695" r="6" class="station station-red transfer-station" data-name="Технологический институт" data-info="Пересадка на синюю ветку." />
+                <text x="340" y="695" class="station-label">    <tspan x="340">Технологический</tspan>
+    <tspan x="340" dy="1.2em">Институт</tspan></text>
                 
-                <circle cx="200" cy="760" r="6" class="station station-red transfer-station" data-name="Балтийская" data-info="Рядом Балтийский вокзал." />
-                <text x="210" y="760" class="station-label">Балтийская</text>
+                <circle cx="150" cy="760" r="6" class="station station-red transfer-station" data-name="Балтийская" data-info="Рядом Балтийский вокзал." />
+                <text x="160" y="760" class="station-label">Балтийская</text>
                 
-                <circle cx="200" cy="830" r="6" class="station station-red transfer-station" data-name="Нарвская" data-info="Станция с наземным вестибюлем." />
-                <text x="210" y="830" class="station-label">Нарвская</text>
+                <circle cx="150" cy="830" r="6" class="station station-red transfer-station" data-name="Нарвская" data-info="Станция с наземным вестибюлем." />
+                <text x="160" y="830" class="station-label">Нарвская</text>
                 
-                <circle cx="200" cy="890" r="6" class="station station-red transfer-station" data-name="Кировский завод" data-info="Рядом Кировский завод." />
-                <text x="210" y="890" class="station-label">    <tspan x="210">Кировский</tspan>
-    <tspan x="210" dy="1.2em">завод</tspan></text>
+                <circle cx="150" cy="890" r="6" class="station station-red transfer-station" data-name="Кировский завод" data-info="Рядом Кировский завод." />
+                <text x="160" y="870" class="station-label">    <tspan x="160">Кировский</tspan>
+    <tspan x="160" dy="1.2em">завод</tspan></text>
                 
-                <circle cx="200" cy="970" r="6" class="station station-red transfer-station" data-name="Автово" data-info="Знаменита своим архитектурным оформлением." />
-                <text x="210" y="970" class="station-label">Автово</text>
+                <circle cx="150" cy="970" r="6" class="station station-red transfer-station" data-name="Автово" data-info="Знаменита своим архитектурным оформлением." />
+                <text x="160" y="970" class="station-label">Автово</text>
                                 
-                <circle cx="200" cy="1040" r="6" class="station station-red transfer-station" data-name="Ленинский проспект" data-info="Станция в Кировском районе." />
-                <text x="210" y="1040" class="station-label">    <tspan x="210">Ленинский</tspan>
-    <tspan x="210" dy="1.2em">проспект</tspan></text>
+                <circle cx="150" cy="1040" r="6" class="station station-red transfer-station" data-name="Ленинский проспект" data-info="Станция в Кировском районе." />
+                <text x="160" y="1040" class="station-label">    <tspan x="160">Ленинский</tspan>
+    <tspan x="160" dy="1.2em">проспект</tspan></text>
                 
-                <circle cx="200" cy="1110" r="6" class="station station-red transfer-station" data-name="Проспект Ветеранов" data-info="Конечная станция красной ветки." />
-                <text x="210" y="1110" class="station-label">    <tspan x="210">Проспект</tspan>
-    <tspan x="210" dy="1.2em">Ветеранов</tspan></text>
+                <circle cx="150" cy="1110" r="6" class="station station-red transfer-station" data-name="Проспект Ветеранов" data-info="Конечная станция красной ветки." />
+                <text x="160" y="1110" class="station-label">    <tspan x="160">Проспект</tspan>
+    <tspan x="160" dy="1.2em">Ветеранов</tspan></text>
             </g>
 
             <!-- Stations Line 2 (Blue) - Московско-Петроградская -->
             <g class="station-group" data-line="2" data-color="blue">
-                <circle cx="450" cy="50" r="5" class="station station-blue transfer-station" data-name="Парнас" data-info="Конечная станция в северной части города." />
-                <text x="460" y="50" class="station-label">Парнас</text>
+                <circle cx="330" cy="50" r="5" class="station station-blue transfer-station" data-name="Парнас" data-info="Конечная станция в северной части города." />
+                <text x="340" y="50" class="station-label">Парнас</text>
                 
-                <circle cx="450" cy="115" r="5" class="station station-blue transfer-station" data-name="Проспект Просвещения" data-info="Станция в Выборгском районе." />
-                <text x="460" y="115" class="station-label">    <tspan x="460">Проспект</tspan>
-    <tspan x="460" dy="1.2em">Просвещения</tspan></text>
+                <circle cx="330" cy="115" r="5" class="station station-blue transfer-station" data-name="Проспект Просвещения" data-info="Станция в Выборгском районе." />
+                <text x="340" y="115" class="station-label">    <tspan x="340">Проспект</tspan>
+    <tspan x="340" dy="1.2em">Просвещения</tspan></text>
                 
-                <circle cx="450" cy="180" r="5" class="station station-blue transfer-station" data-name="Озерки" data-info="Рядом озеро Долгое." />
-                <text x="460" y="180" class="station-label">Озерки</text>
+                <circle cx="330" cy="180" r="5" class="station station-blue transfer-station" data-name="Озерки" data-info="Рядом озеро Долгое." />
+                <text x="340" y="180" class="station-label">Озерки</text>
                 
-                <circle cx="450" cy="245" r="5" class="station station-blue transfer-station" data-name="Удельная" data-info="Станция в Приморском районе." />
-                <text x="460" y="245" class="station-label">Удельная</text>
+                <circle cx="330" cy="245" r="5" class="station station-blue transfer-station" data-name="Удельная" data-info="Станция в Приморском районе." />
+                <text x="340" y="245" class="station-label">Удельная</text>
                 
-                <circle cx="450" cy="310" r="5" class="station station-blue transfer-station" data-name="Пионерская" data-info="Названа в честь пионерского движения." />
-                <text x="460" y="310" class="station-label">Пионерская</text>
+                <circle cx="330" cy="310" r="5" class="station station-blue transfer-station" data-name="Пионерская" data-info="Названа в честь пионерского движения." />
+                <text x="340" y="310" class="station-label">Пионерская</text>
                 
-                <circle cx="450" cy="375" r="5" class="station station-blue transfer-station" data-name="Чёрная речка" data-info="Рядом река Чёрная." />
-                <text x="460" y="375" class="station-label">    <tspan x="460">Черная</tspan>
-    <tspan x="460" dy="1.2em">Речка</tspan></text>
+                <circle cx="330" cy="375" r="5" class="station station-blue transfer-station" data-name="Чёрная речка" data-info="Рядом река Чёрная." />
+                <text x="340" y="375" class="station-label">    <tspan x="340">Черная</tspan>
+    <tspan x="340" dy="1.2em">Речка</tspan></text>
                 
-                <circle cx="450" cy="440" r="5" class="station station-blue transfer-station" data-name="Петроградская" data-info="На Петроградской стороне." />
-                <text x="460" y="440" class="station-label">Петроградская</text>
+                <circle cx="330" cy="440" r="5" class="station station-blue transfer-station" data-name="Петроградская" data-info="На Петроградской стороне." />
+                <text x="340" y="440" class="station-label">Петроградская</text>
                 
-                <circle cx="450" cy="505" r="5" class="station station-blue transfer-station" data-name="Горьковская" data-info="Рядом Петропавловская крепость." />
-                <text x="460" y="505" class="station-label">Горьковская</text>
+                <circle cx="330" cy="505" r="5" class="station station-blue transfer-station" data-name="Горьковская" data-info="Рядом Петропавловская крепость." />
+                <text x="340" y="505" class="station-label">Горьковская</text>
                 
-                <circle cx="450" cy="560" r="6" class="station station-blue transfer-station" data-name="Невский проспект" data-info="Пересадка на ст. Гостиный двор (зеленая ветка)." />
-                <text x="460" y="560" class="station-label">    <tspan x="460">Невский</tspan>
-    <tspan x="460" dy="1.2em">Проспект</tspan></text>
+                <circle cx="330" cy="560" r="6" class="station station-blue transfer-station" data-name="Невский проспект" data-info="Пересадка на ст. Гостиный двор (зеленая ветка)." />
+                <text x="340" y="560" class="station-label">    <tspan x="340">Невский</tspan>
+    <tspan x="340" dy="1.2em">Проспект</tspan></text>
                 
-                <circle cx="450" cy="610" r="6" class="station station-blue transfer-station" data-name="Сенная площадь" data-info="Пересадка на ст. Садовая и Спасская." />
-                <text x="460" y="610" class="station-label">    <tspan x="460">Сенная</tspan>
-    <tspan x="460" dy="1.2em">площадь</tspan></text>
+                <circle cx="330" cy="610" r="6" class="station station-blue transfer-station" data-name="Сенная площадь" data-info="Пересадка на ст. Садовая и Спасская." />
+                <text x="340" y="610" class="station-label">    <tspan x="340">Сенная</tspan>
+    <tspan x="340" dy="1.2em">площадь</tspan></text>
                 
-                <circle cx="450" cy="675" r="6" class="station station-blue transfer-station" data-name="Технологический институт" data-info="Пересадка на красную ветку." />
-                <text x="460" y="675" class="station-label">    <tspan x="460">Технологичекий</tspan>
-    <tspan x="460" dy="1.2em">институт</tspan></text>
+                <circle cx="330" cy="675" r="6" class="station station-blue transfer-station" data-name="Технологический институт" data-info="Пересадка на красную ветку." />
+                <text x="340" y="675" class="station-label">    <tspan x="340">Технологичекий</tspan>
+    <tspan x="340" dy="1.2em">институт</tspan></text>
                 
-                <circle cx="450" cy="760" r="5" class="station station-blue transfer-station" data-name="Фрунзенская" data-info="Закрыта на реконструкцию." />
-                <text x="460" y="760" class="station-label">Фрунзенская</text>
+                <circle cx="330" cy="760" r="5" class="station station-blue transfer-station" data-name="Фрунзенская" data-info="Закрыта на реконструкцию." />
+                <text x="340" y="760" class="station-label">Фрунзенская</text>
                 
-                <circle cx="450" cy="825" r="5" class="station station-blue transfer-station" data-name="Московские ворота" data-info="Рядом Московские триумфальные ворота." />
-                <text x="460" y="825" class="station-label">    <tspan x="460">Московские</tspan>
-    <tspan x="460" dy="1.2em">ворота</tspan></text>
+                <circle cx="330" cy="825" r="5" class="station station-blue transfer-station" data-name="Московские ворота" data-info="Рядом Московские триумфальные ворота." />
+                <text x="340" y="825" class="station-label">    <tspan x="340">Московские</tspan>
+    <tspan x="340" dy="1.2em">ворота</tspan></text>
                 
-                <circle cx="450" cy="890" r="5" class="station station-blue transfer-station" data-name="Электросила" data-info="Станция в Московском районе." />
-                <text x="460" y="890" class="station-label">Электросила</text>
+                <circle cx="330" cy="890" r="5" class="station station-blue transfer-station" data-name="Электросила" data-info="Станция в Московском районе." />
+                <text x="340" y="890" class="station-label">Электросила</text>
                 
-                <circle cx="450" cy="955" r="5" class="station station-blue transfer-station" data-name="Парк Победы" data-info="Рядом парк Победы." />
-                <text x="460" y="955" class="station-label">    <tspan x="460">Парк</tspan>
-    <tspan x="460" dy="1.2em">Победы</tspan></text>
+                <circle cx="330" cy="955" r="5" class="station station-blue transfer-station" data-name="Парк Победы" data-info="Рядом парк Победы." />
+                <text x="340" y="955" class="station-label">    <tspan x="340">Парк</tspan>
+    <tspan x="340" dy="1.2em">Победы</tspan></text>
                 
-                <circle cx="450" cy="1020" r="5" class="station station-blue transfer-station" data-name="Московская" data-info="Рядом площадь Победы." />
-                <text x="460" y="1025" class="station-label">Московская</text>
+                <circle cx="330" cy="1020" r="5" class="station station-blue transfer-station" data-name="Московская" data-info="Рядом площадь Победы." />
+                <text x="340" y="1025" class="station-label">Московская</text>
 
-                <circle cx="450" cy="1085" r="5" class="station station-blue transfer-station" data-name="Звездная" data-info="Станция в Московском районе." />
-                <text x="460" y="1085" class="station-label">Звездная</text>
+                <circle cx="330" cy="1085" r="5" class="station station-blue transfer-station" data-name="Звездная" data-info="Станция в Московском районе." />
+                <text x="340" y="1085" class="station-label">Звездная</text>
                 
-                <circle cx="450" cy="1150" r="5" class="station station-blue transfer-station" data-name="Купчино" data-info="Конечная станция синей ветки." />
-                <text x="460" y="1150" class="station-label">Купчино</text>
+                <circle cx="330" cy="1150" r="5" class="station station-blue transfer-station" data-name="Купчино" data-info="Конечная станция синей ветки." />
+                <text x="340" y="1150" class="station-label">Купчино</text>
             </g>
 
             <!-- Stations Line 3 (Green) - Невско-Василеостровская -->
             <g class="station-group" data-line="3" data-color="green">
-                <circle cx="50" cy="150" r="5" class="station station-green transfer-station" data-name="Беговая" data-info="Конечная станция на западе города." />
-                <text x="60" y="150" class="station-label">Беговая</text>
+                <circle cx="10" cy="150" r="5" class="station station-green transfer-station" data-name="Беговая" data-info="Конечная станция на западе города." />
+                <text x="20" y="150" class="station-label">Беговая</text>
                 
-                <circle cx="50" cy="300" r="5" class="station station-green transfer-station" data-name="Зенит" data-info="Рядом стадион Газпром Арена." />
-                <text x="60" y="300" class="station-label">Зенит</text>
+                <circle cx="10" cy="300" r="5" class="station station-green transfer-station" data-name="Зенит" data-info="Рядом стадион Газпром Арена." />
+                <text x="20" y="300" class="station-label">Зенит</text>
                 
-                <circle cx="50" cy="450" r="5" class="station station-green transfer-station" data-name="Приморская" data-info="На Васильевском острове." />
-                <text x="60" y="450" class="station-label">Приморская</text>
+                <circle cx="10" cy="450" r="5" class="station station-green transfer-station" data-name="Приморская" data-info="На Васильевском острове." />
+                <text x="20" y="450" class="station-label">Приморская</text>
                 
-                <circle cx="150" cy="580" r="5" class="station station-green transfer-station" data-name="Василеостровская" data-info="Станция на Васильевском острове." />
-                <text x="160" y="580" class="station-label">Василеостровская</text>
+                <circle cx="30" cy="580" r="5" class="station station-green transfer-station" data-name="Василеостровская" data-info="Станция на Васильевском острове." />
+                <text x="40" y="550" class="station-label">    <tspan x="30">Василе-</tspan>
+    <tspan x="30" dy="1.2em">островская</tspan></text>
                 
-                <circle cx="450" cy="580" r="6" class="station station-green transfer-station" data-name="Гостиный двор" data-info="Пересадка на ст. Невский проспект (синяя ветка)." />
-                <text x="460" y="580" class="station-label">Гостиный двор</text>
+                <circle cx="330" cy="580" r="6" class="station station-green transfer-station" data-name="Гостиный двор" data-info="Пересадка на ст. Невский проспект (синяя ветка)." />
+                <text x="340" y="580" class="station-label">Гостиный двор</text>
                 
-                <circle cx="600" cy="580" r="6" class="station station-green transfer-station" data-name="Маяковская" data-info="Пересадка на ст. Площадь Восстания (красная ветка)." />
-                <text x="610" y="580" class="station-label">Маяковская</text>
+                <circle cx="480" cy="580" r="6" class="station station-green transfer-station" data-name="Маяковская" data-info="Пересадка на ст. Площадь Восстания (красная ветка)." />
+                <text x="490" y="580" class="station-label">Маяковская</text>
                 
                 <circle cx="675" cy="650" r="6" class="station station-green transfer-station" data-name="Площадь Александра Невского" data-info="Пересадка на оранжевую ветку." />
                 <text x="685" y="650" class="station-label">Пл. А. Невского</text>
@@ -295,13 +296,14 @@
             <!-- Stations Line 4 (Orange) - Лахтинско-Правобережная -->
             <g class="station-group" data-line="4" data-color="orange">
                 <circle cx="100" cy="630" r="5" class="station station-orange transfer-station" data-name="Горный институт" data-info="Конечная станция. Рядом Горный университет." />
-                <text x="110" y="630" class="station-label">Горный институт</text>
+                <text x="110" y="630" class="station-label">    <tspan x="110">Горный</tspan>
+    <tspan x="110" dy="1.2em">институт</tspan></text>
                 
-                <circle cx="430" cy="630" r="6" class="station station-orange transfer-station" data-name="Спасская" data-info="Пересадка на ст. Сенная площадь и Садовая." />
-                <text x="440" y="630" class="station-label">Спасская</text>
+                <circle cx="310" cy="630" r="6" class="station station-orange transfer-station" data-name="Спасская" data-info="Пересадка на ст. Сенная площадь и Садовая." />
+                <text x="320" y="630" class="station-label">Спасская</text>
                                 
-                <circle cx="600" cy="630" r="6" class="station station-orange transfer-station" data-name="Достоевская" data-info="Пересадка на ст. Владимирская (красная ветка)." />
-                <text x="610" y="630" class="station-label">Достоевская</text>
+                <circle cx="480" cy="630" r="6" class="station station-orange transfer-station" data-name="Достоевская" data-info="Пересадка на ст. Владимирская (красная ветка)." />
+                <text x="490" y="650" class="station-label">Достоевская</text>
                 
                 <circle cx="640" cy="630" r="6" class="station station-orange transfer-station" data-name="Лиговский проспект" data-info="Пересадка на фиолетовую ветку." />
                 <text x="650" y="630" class="station-label">Лиговский пр.</text>
@@ -324,59 +326,64 @@
 
             <!-- Stations Line 5 (Purple) - Фрунзенско-Приморская -->
             <g class="station-group" data-line="5" data-color="purple">
-                <circle cx="250" cy="100" r="6" class="station station-purple transfer-station" data-name="Комендантский проспект" data-info="Конечная станция на севере." />
-                <text x="260" y="100" class="station-label">Комендантский пр.</text>
+                <circle cx="150" cy="100" r="6" class="station station-purple transfer-station" data-name="Комендантский проспект" data-info="Конечная станция на севере." />
+                <text x="160" y="100" class="station-label">    <tspan x="160">Комендантский</tspan>
+    <tspan x="160" dy="1.2em">проспект</tspan></text>
                 
-                <circle cx="250" cy="200" r="6" class="station station-purple transfer-station" data-name="Старая Деревня" data-info="Станция в Приморском районе." />
-                <text x="260" y="200" class="station-label">Старая Деревня</text>
+                <circle cx="150" cy="200" r="6" class="station station-purple transfer-station" data-name="Старая Деревня" data-info="Станция в Приморском районе." />
+                <text x="260" y="200" class="station-label">    <tspan x="160">Старая</tspan>
+    <tspan x="160" dy="1.2em">Деревня</tspan></text>
                 
-                <circle cx="250" cy="300" r="6" class="station station-purple transfer-station" data-name="Крестовский остров" data-info="На Крестовском острове." />
-                <text x="260" y="300" class="station-label">Крестовский о-в</text>
+                <circle cx="150" cy="300" r="6" class="station station-purple transfer-station" data-name="Крестовский остров" data-info="На Крестовском острове." />
+                <text x="160" y="300" class="station-label">    <tspan x="160">Крестовский</tspan>
+    <tspan x="160" dy="1.2em">остров</tspan></text>
                 
-                <circle cx="250" cy="400" r="6" class="station station-purple transfer-station" data-name="Чкаловская" data-info="Станция на Петроградской стороне." />
-                <text x="260" y="400" class="station-label">Чкаловская</text>
+                <circle cx="150" cy="400" r="6" class="station station-purple transfer-station" data-name="Чкаловская" data-info="Станция на Петроградской стороне." />
+                <text x="160" y="400" class="station-label">Чкаловская</text>
                 
-                <circle cx="250" cy="500" r="6" class="station station-purple transfer-station" data-name="Спортивная" data-info="Рядом стадион Петровский." />
-                <text x="260" y="500" class="station-label">Спортивная</text>
+                <circle cx="150" cy="500" r="6" class="station station-purple transfer-station" data-name="Спортивная" data-info="Рядом стадион Петровский." />
+                <text x="160" y="500" class="station-label">Спортивная</text>
                 
-                <circle cx="250" cy="600" r="6" class="station station-purple transfer-station" data-name="Адмиралтейская" data-info="Самая глубокая станция метро." />
-                <text x="260" y="600" class="station-label">Адмиралтейская</text>
+                <circle cx="150" cy="600" r="6" class="station station-purple transfer-station" data-name="Адмиралтейская" data-info="Самая глубокая станция метро." />
+                <text x="160" y="600" class="station-label">Адмиралтейская</text>
                                 
-                <circle cx="450" cy="630" r="6" class="station station-purple transfer-station" data-name="Садовая" data-info="Пересадка на ст. Сенная площадь и Спасская." />
-                <text x="460" y="630" class="station-label">Садовая</text>
+                <circle cx="330" cy="630" r="6" class="station station-purple transfer-station" data-name="Садовая" data-info="Пересадка на ст. Сенная площадь и Спасская." />
+                <text x="340" y="630" class="station-label">Садовая</text>
                 
-                <circle cx="505" cy="712" r="6" class="station station-purple transfer-station" data-name="Звенигородская" data-info="Пересадка на ст. Пушкинская (красная ветка)." />
-                <text x="515" y="712" class="station-label">Звенигородская</text>
+                <circle cx="385" cy="712" r="6" class="station station-purple transfer-station" data-name="Звенигородская" data-info="Пересадка на ст. Пушкинская (красная ветка)." />
+                <text x="395" y="712" class="station-label">Звенигородская</text>
                 
-                <circle cx="560" cy="790" r="5" class="station station-purple transfer-station" data-name="Обводный канал" data-info="Рядом река Обводный канал." />
-                <text x="570" y="790" class="station-label">Обводный канал</text>
+                <circle cx="460" cy="790" r="5" class="station station-purple transfer-station" data-name="Обводный канал" data-info="Рядом река Обводный канал." />
+                <text x="470" y="790" class="station-label">    <tspan x="470">Обводный</tspan>     <tspan x="470" dy="1.2em">канал</tspan></text>
                 
-                <circle cx="560" cy="850" r="5" class="station station-purple transfer-station" data-name="Волковская" data-info="Рядом Волковское кладбище." />
-                <text x="570" y="850" class="station-label">Волковская</text>
+                <circle cx="460" cy="850" r="5" class="station station-purple transfer-station" data-name="Волковская" data-info="Рядом Волковское кладбище." />
+                <text x="470" y="850" class="station-label">Волковская</text>
                 
-                <circle cx="560" cy="910" r="5" class="station station-purple transfer-station" data-name="Бухарестская" data-info="Станция во Фрунзенском районе." />
-                <text x="570" y="910" class="station-label">Бухарестская</text>
+                <circle cx="460" cy="910" r="5" class="station station-purple transfer-station" data-name="Бухарестская" data-info="Станция во Фрунзенском районе." />
+                <text x="470" y="910" class="station-label">Бухарестская</text>
                 
-                <circle cx="560" cy="970" r="5" class="station station-purple transfer-station" data-name="Международная" data-info="Станция рядом с Балканской площадью." />
-                <text x="570" y="970" class="station-label">Международная</text>
+                <circle cx="460" cy="970" r="5" class="station station-purple transfer-station" data-name="Международная" data-info="Станция рядом с Балканской площадью." />
+                <text x="470" y="970" class="station-label">Международная</text>
                 
-                <circle cx="560" cy="1030" r="5" class="station station-purple transfer-station" data-name="Проспект Славы" data-info="Станция во Фрунзенском районе." />
-                <text x="570" y="1030" class="station-label">Проспект Славы</text>
+                <circle cx="460" cy="1030" r="5" class="station station-purple transfer-station" data-name="Проспект Славы" data-info="Станция во Фрунзенском районе." />
+                <text x="470" y="1030" class="station-label">    <tspan x="470">Проспект</tspan>
+    <tspan x="470" dy="1.2em">Славы</tspan></text>
                 
-                <circle cx="560" cy="1090" r="5" class="station station-purple transfer-station" data-name="Дунайская" data-info="Станция рядом с Дунайским проспектом." />
-                <text x="570" y="1090" class="station-label">Дунайская</text>
+                <circle cx="460" cy="1090" r="5" class="station station-purple transfer-station" data-name="Дунайская" data-info="Станция рядом с Дунайским проспектом." />
+                <text x="470" y="1090" class="station-label">Дунайская</text>
                 
-                <circle cx="560" cy="1150" r="5" class="station station-purple transfer-station" data-name="Шушары" data-info="Конечная станция фиолетовой ветки." />
-                <text x="570" y="1150" class="station-label">Шушары</text>
+                <circle cx="460" cy="1150" r="5" class="station station-purple transfer-station" data-name="Шушары" data-info="Конечная станция фиолетовой ветки." />
+                <text x="470" y="1150" class="station-label">Шушары</text>
             </g>
 
             <!-- Stations Line 6 (Brown) - ? -->
             <g class="station-group" data-line="6" data-color="brown">
-                <circle cx="200" cy="830" r="6" class="station station-brown transfer-station" data-name="Путиловская" data-info="" />
-                <text x="210" y="830" class="station-label">Путиловская</text>
+                <circle cx="150" cy="910" r="6" class="station station-brown transfer-station" data-name="Путиловская" data-info="" />
+                <text x="160" y="920" class="station-label">Путиловская</text>
                 
-                <circle cx="100" cy="910" r="6" class="station station-brown transfer-station" data-name="Юго-Западная" data-info="" />
-                <text x="110" y="910" class="station-label">Юго-Западная</text>
+                <circle cx="10" cy="910" r="6" class="station station-brown transfer-station" data-name="Юго-Западная" data-info="" />
+                <text x="20" y="930" class="station-label">    <tspan x="20">Юго-</tspan>
+    <tspan x="20" dy="1.2em">Западная</tspan></text>
             </g>
         </svg>
 
