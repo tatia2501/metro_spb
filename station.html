@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Станция метро — Карта СПб</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+        }
+        
+        .section-card {
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
+        }
+        
+        .section-card:hover {
+            border-color: #64748b;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .fact-item {
+            position: relative;
+            padding-left: 24px;
+        }
+        
+        .fact-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #94a3b8;
+            font-size: 20px;
+            line-height: 1;
+        }
+        
+        .back-btn {
+            transition: all 0.2s ease;
+        }
+        
+        .back-btn:hover {
+            transform: translateX(-3px);
+            background-color: #334155 !important;
+        }
+        
+        .line-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Back Button (Fixed Top-Left) -->
+    <a href="index.html" class="back-btn fixed top-4 left-4 z-50 flex items-center gap-2 px-4 py-2 bg-slate-800/90 hover:bg-slate-700 text-white rounded-xl border border-slate-600 backdrop-blur-sm">
+        <i data-lucide="arrow-left" class="w-5 h-5"></i>
+        <span class="hidden sm:inline">Назад к карте</span>
+    </a>
+
+    <!-- Header -->
+    <header class="pt-20 pb-6 px-4 text-center">
+        <div id="station-header" class="max-w-2xl mx-auto">
+            <div class="flex items-center justify-center gap-3 mb-3">
+                <span id="line-indicator" class="line-indicator"></span>
+                <span id="line-name" class="text-sm font-medium text-slate-400"></span>
+            </div>
+            <h1 id="station-title" class="text-3xl md:text-4xl font-bold text-white mb-2"></h1>
+            <p id="station-short" class="text-slate-400 text-lg"></p>
+        </div>
+    </header>
+
+    <!-- Loading State -->
+    <div id="loading" class="flex-1 flex items-center justify-center py-20">
+        <div class="text-center">
+            <div class="w-12 h-12 border-4 border-slate-600 border-t-blue-500 rounded-full animate-spin mx-auto mb-4"></div>
+            <p class="text-slate-400">Загрузка данных...</p>
+        </div>
+    </div>
+
+    <!-- Error State -->
+    <div id="error" class="hidden flex-1 flex items-center justify-center py-20 px-4">
+        <div class="text-center max-w-md">
+            <i data-lucide="alert-circle" class="w-16 h-16 text-red-500 mx-auto mb-4"></i>
+            <h2 class="text-xl font-bold text-white mb-2">Станция не найдена</h2>
+            <p class="text-slate-400 mb-6">К сожалению, информация об этой станции временно недоступна.</p>
+            <a href="index.html" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-colors">
+                <i data-lucide="map" class="w-4 h-4"></i>
+                Вернуться к карте
+            </a>
+        </div>
+    </div>
+
+    <!-- Content Sections -->
+    <main id="content" class="hidden flex-1 px-4 pb-8">
+        <div class="max-w-2xl mx-auto space-y-4">
+            
+            <!-- History Section -->
+            <section class="section-card rounded-2xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 bg-amber-500/20 rounded-lg">
+                        <i data-lucide="book-open" class="w-5 h-5 text-amber-400"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-white">История</h2>
+                </div>
+                <div id="history-content" class="text-slate-300 leading-relaxed space-y-3">
+                    <!-- Content will be inserted here -->
+                </div>
+            </section>
+
+            <!-- Architecture Section -->
+            <section class="section-card rounded-2xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 bg-purple-500/20 rounded-lg">
+                        <i data-lucide="building-2" class="w-5 h-5 text-purple-400"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-white">Архитектура</h2>
+                </div>
+                <div id="architecture-content" class="text-slate-300 leading-relaxed space-y-3">
+                    <!-- Content will be inserted here -->
+                </div>
+            </section>
+
+            <!-- Facts Section -->
+            <section class="section-card rounded-2xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-2 bg-emerald-500/20 rounded-lg">
+                        <i data-lucide="lightbulb" class="w-5 h-5 text-emerald-400"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-white">Интересные факты</h2>
+                </div>
+                <div id="facts-content" class="space-y-3">
+                    <!-- Facts will be inserted here -->
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 px-4 text-center border-t border-slate-800">
+        <p class="text-slate-500 text-sm">
+            Интерактивная карта метро Санкт-Петербурга
+        </p>
+    </footer>
+
+    <!-- Подключение данных -->
+    <script src="stations-data.js"></script>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Цвета линий для индикатора
+        const lineColors = {
+            'red': '#ef4444',
+            'blue': '#3b82f6',
+            'green': '#22c55e',
+            'orange': '#f97316',
+            'purple': '#a855f7',
+            'brown': '#8a5f2f'
+        };
+
+        // Названия линий
+        const lineNames = {
+            'red': 'Кировско-Выборгская линия',
+            'blue': 'Московско-Петроградская линия',
+            'green': 'Невско-Василеостровская линия',
+            'orange': 'Лахтинско-Правобережная линия',
+            'purple': 'Фрунзенско-Приморская линия',
+            'brown': 'Строящаяся линия'
+        };
+
+        // Форматирование текста с переносами строк
+        function formatText(text) {
+            if (!text) return '';
+            return text
+                .split('\n')
+                .filter(line => line.trim())
+                .map(line => `<p>${line.trim()}</p>`)
+                .join('');
+        }
+
+        // Загрузка данных станции
+        function loadStation() {
+            // Получаем название станции из URL параметра
+            const params = new URLSearchParams(window.location.search);
+            const stationName = params.get('name');
+            
+            const loading = document.getElementById('loading');
+            const error = document.getElementById('error');
+            const content = document.getElementById('content');
+            
+            if (!stationName) {
+                loading.classList.add('hidden');
+                error.classList.remove('hidden');
+                return;
+            }
+            
+            // Ищем данные в объекте STATIONS_DATA
+            const data = STATIONS_DATA[stationName];
+            
+            if (!data) {
+                loading.classList.add('hidden');
+                error.classList.remove('hidden');
+                return;
+            }
+            
+            // Заполняем заголовок
+            document.getElementById('station-title').textContent = stationName;
+            document.getElementById('station-short').textContent = data.info || '';
+            
+            // Определяем линию станции (упрощённый поиск)
+            let stationLine = 'red'; // по умолчанию
+            for (const [name, color] of Object.entries(lineColors)) {
+                if (stationName.includes('Кировско') || stationName.includes('Девяткино') || 
+                    stationName.includes('Проспект Ветеранов') || stationName.includes('Автово')) {
+                    stationLine = 'red';
+                    break;
+                } else if (stationName.includes('Парнас') || stationName.includes('Купчино') || 
+                          stationName.includes('Московская') || stationName.includes('Петроградская')) {
+                    stationLine = 'blue';
+                    break;
+                } else if (stationName.includes('Беговая') || stationName.includes('Рыбацкое') || 
+                          stationName.includes('Василеостровская') || stationName.includes('Гостиный')) {
+                    stationLine = 'green';
+                    break;
+                } else if (stationName.includes('Горный институт') || stationName.includes('Улица Дыбенко') || 
+                          stationName.includes('Спасская') || stationName.includes('Достоевская')) {
+                    stationLine = 'orange';
+                    break;
+                } else if (stationName.includes('Комендантский') || stationName.includes('Шушары') || 
+                          stationName.includes('Адмиралтейская') || stationName.includes('Садовая')) {
+                    stationLine = 'purple';
+                    break;
+                }
+            }
+            
+            // Устанавливаем цвет линии
+            document.getElementById('line-indicator').style.backgroundColor = lineColors[stationLine];
+            document.getElementById('line-name').textContent = lineNames[stationLine];
+            
+            // Заполняем раздел "История"
+            const historyContent = document.getElementById('history-content');
+            if (data.history) {
+                historyContent.innerHTML = formatText(data.history);
+            } else {
+                historyContent.innerHTML = '<p class="text-slate-500">Информация об истории станции будет добавлена позже.</p>';
+            }
+            
+            // Заполняем раздел "Архитектура"
+            const architectureContent = document.getElementById('architecture-content');
+            if (data.architecture) {
+                architectureContent.innerHTML = formatText(data.architecture);
+            } else {
+                architectureContent.innerHTML = '<p class="text-slate-500">Информация об архитектуре станции будет добавлена позже.</p>';
+            }
+            
+            // Заполняем раздел "Факты"
+            const factsContent = document.getElementById('facts-content');
+            if (data.facts && data.facts.length > 0) {
+                factsContent.innerHTML = data.facts
+                    .map(fact => `<p class="fact-item text-slate-300">${fact}</p>`)
+                    .join('');
+            } else {
+                factsContent.innerHTML = '<p class="text-slate-500 fact-item">Интересные факты будут добавлены позже.</p>';
+            }
+            
+            // Показываем контент, скрываем загрузку
+            loading.classList.add('hidden');
+            content.classList.remove('hidden');
+        }
+
+        // Загружаем данные при готовности страницы
+        document.addEventListener('DOMContentLoaded', loadStation);
+    </script>
+</body>
+</html>
