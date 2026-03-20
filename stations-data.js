@@ -1,8 +1,8 @@
 /* ШАБЛОН ДЛЯ НОВОЙ СТАНЦИИ:
 "Название": {
-  history: "",
-  architecture: "",
-  facts: []
+  history: ``, 
+  architecture: ``,
+  facts: [``,``]
 },
 */
 
