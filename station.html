@@ -55,6 +55,24 @@
             display: inline-block;
             margin-right: 8px;
         }
+        
+        .year-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            background: rgba(148, 163, 184, 0.15);
+            border: 1px solid #334155;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+        
+        .year-badge i {
+            width: 14px;
+            height: 14px;
+            color: #64748b;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -72,7 +90,16 @@
                 <span id="line-indicator" class="line-indicator"></span>
                 <span id="line-name" class="text-sm font-medium text-slate-400"></span>
             </div>
-            <h1 id="station-title" class="text-3xl md:text-4xl font-bold text-white mb-2"></h1>
+            <h1 id="station-title" class="text-3xl md:text-4xl font-bold text-white mb-3"></h1>
+            
+            <!-- Year Badge -->
+            <div id="year-container" class="mb-4">
+                <span class="year-badge">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    <span>Год открытия: <span id="station-year" class="text-slate-300 font-medium"></span></span>
+                </span>
+            </div>
+            
             <p id="station-short" class="text-slate-400 text-lg"></p>
         </div>
     </header>
@@ -217,6 +244,22 @@
             document.getElementById('station-title').textContent = stationName;
             document.getElementById('station-short').textContent = data.info || '';
             
+            // === НОВОЕ: Отображение года открытия ===
+            const yearElement = document.getElementById('station-year');
+            const yearContainer = document.getElementById('year-container');
+            
+            if (data.year && data.year.trim()) {
+                yearElement.textContent = data.year;
+                yearElement.classList.remove('italic', 'text-slate-600');
+                yearContainer.classList.remove('hidden');
+            } else {
+                yearElement.textContent = 'не указан';
+                yearElement.classList.add('italic', 'text-slate-600');
+                // Можно скрыть бейдж, если год не важен:
+                // yearContainer.classList.add('hidden');
+            }
+            // ========================================
+            
             // Определяем линию станции (упрощённый поиск)
             let stationLine = 'red'; // по умолчанию
             for (const [name, color] of Object.entries(lineColors)) {
@@ -249,28 +292,29 @@
             
             // Заполняем раздел "История"
             const historyContent = document.getElementById('history-content');
-            if (data.history) {
+            if (data.history && data.history.trim()) {
                 historyContent.innerHTML = formatText(data.history);
             } else {
-                historyContent.innerHTML = '<p class="text-slate-500">Информация об истории станции будет добавлена позже.</p>';
+                historyContent.innerHTML = '<p class="text-slate-500 italic">Информация об истории станции будет добавлена позже...</p>';
             }
             
             // Заполняем раздел "Архитектура"
             const architectureContent = document.getElementById('architecture-content');
-            if (data.architecture) {
+            if (data.architecture && data.architecture.trim()) {
                 architectureContent.innerHTML = formatText(data.architecture);
             } else {
-                architectureContent.innerHTML = '<p class="text-slate-500">Информация об архитектуре станции будет добавлена позже.</p>';
+                architectureContent.innerHTML = '<p class="text-slate-500 italic">Информация об архитектуре станции будет добавлена позже...</p>';
             }
             
             // Заполняем раздел "Факты"
             const factsContent = document.getElementById('facts-content');
-            if (data.facts && data.facts.length > 0) {
+            if (data.facts && data.facts.length > 0 && data.facts.some(f => f && f.trim())) {
                 factsContent.innerHTML = data.facts
+                    .filter(fact => fact && fact.trim())
                     .map(fact => `<p class="fact-item text-slate-300">${fact}</p>`)
                     .join('');
             } else {
-                factsContent.innerHTML = '<p class="text-slate-500 fact-item">Интересные факты будут добавлены позже.</p>';
+                factsContent.innerHTML = '<p class="text-slate-500 italic fact-item">Интересные факты будут добавлены позже...</p>';
             }
             
             // Показываем контент, скрываем загрузку
