@@ -466,53 +466,23 @@
     <script src="./stations-data.js"></script>
 
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+    // Initialize Lucide icons
+    lucide.createIcons();
 
-        // DOM Elements
-        const modal = document.getElementById('station-modal');
-        const modalContent = document.getElementById('modal-content');
-        const closeBtn = document.getElementById('close-btn');
-        const editBtn = document.getElementById('edit-btn');
-        const saveBtn = document.getElementById('save-btn');
-        const textDisplay = document.getElementById('text-display');
-        const textEdit = document.getElementById('text-edit');
-        const stationInfo = document.getElementById('station-info');
-        const stationName = document.getElementById('station-name');
-        const lineName = document.getElementById('line-name');
-        const lineColor = document.getElementById('line-color');
-        const stations = document.querySelectorAll('.station');
+    // Получаем все станции
+    const stations = document.querySelectorAll('.station');
 
-        // Line names mapping
-        const lineNames = {
-            'red': '1 Кировско-Выборгская линия',
-            'blue': '2 Московско-Петроградская линия',
-            'green': '3 Невско-Василеостровская линия',
-            'orange': '4 Лахтинско-Правобережная линия',
-            'purple': '5 Фрунзенско-Приморская линия',
-            'brown': '6 строящаяся линия'
-        };
-
-        const lineColorsHex = {
-            'red': '#ef4444',
-            'blue': '#3b82f6',
-            'green': '#22c55e',
-            'orange': '#f97316',
-            'purple': '#a855f7',
-            'brown': '#8a5f2f'
-        };
-
-        let currentStation = null;
-
+    // Обработчик клика для каждой станции
+    stations.forEach(station => {
         station.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const name = this.getAttribute('data-name');
-    
-        // Переход на страницу станции с параметром
-        window.location.href = `station.html?name=${encodeURIComponent(name)}`;
-});
-
-
+            e.stopPropagation();
+            const name = this.getAttribute('data-name');
+            
+            // Переход на страницу станции с параметром
+            window.location.href = `station.html?name=${encodeURIComponent(name)}`;
+        });
+    });
     </script>
+
 </body>
 </html>
