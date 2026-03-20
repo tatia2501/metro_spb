@@ -1,5 +1,6 @@
 /* ШАБЛОН ДЛЯ НОВОЙ СТАНЦИИ:
 "Название": {
+  year: ``,
   history: ``, 
   architecture: ``,
   facts: [
@@ -12,6 +13,7 @@
 const STATIONS_DATA = {
   // ========== КИРОВСКО-ВЫБОРГСКАЯ ЛИНИЯ (Красная) ==========
   "Девяткино": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -21,6 +23,7 @@ const STATIONS_DATA = {
   },
 
   "Гражданский проспект": {
+    year: ``,
     history: ``, 
     architecture: ``,
     facts: [
@@ -30,6 +33,7 @@ const STATIONS_DATA = {
   },
   
   "Академическая": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -39,6 +43,7 @@ const STATIONS_DATA = {
   },
   
   "Политехническая": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -48,6 +53,7 @@ const STATIONS_DATA = {
   },
 
   "Площадь Мужества": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -57,6 +63,7 @@ const STATIONS_DATA = {
   },
 
   "Лесная": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -66,6 +73,7 @@ const STATIONS_DATA = {
   },
   
   "Выборгская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -75,6 +83,7 @@ const STATIONS_DATA = {
   },
   
   "Площадь Ленина": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -84,6 +93,7 @@ const STATIONS_DATA = {
   },
   
   "Чернышевская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -93,6 +103,7 @@ const STATIONS_DATA = {
   },
   
   "Площадь Восстания": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -102,6 +113,7 @@ const STATIONS_DATA = {
   },
   
   "Владимирская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -111,6 +123,7 @@ const STATIONS_DATA = {
   },
   
   "Пушкинская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -120,6 +133,7 @@ const STATIONS_DATA = {
   },
   
   "Технологический институт": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -129,6 +143,7 @@ const STATIONS_DATA = {
   },
   
   "Балтийская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -138,6 +153,7 @@ const STATIONS_DATA = {
   },
   
   "Нарвская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -147,6 +163,7 @@ const STATIONS_DATA = {
   },
   
   "Кировский завод": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -156,6 +173,7 @@ const STATIONS_DATA = {
   },
   
   "Автово": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -165,6 +183,7 @@ const STATIONS_DATA = {
   },
   
   "Ленинский проспект": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -174,6 +193,7 @@ const STATIONS_DATA = {
   },
   
   "Проспект Ветеранов": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -184,6 +204,7 @@ const STATIONS_DATA = {
 
   // ========== МОСКОВСКО-ПЕТРОГРАДСКАЯ ЛИНИЯ (Синяя) ==========
   "Парнас": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -193,6 +214,7 @@ const STATIONS_DATA = {
   },
   
   "Проспект Просвещения": {
+    year: ``, 
     history: ``, 
     architecture: ``,
     facts: [
@@ -202,6 +224,7 @@ const STATIONS_DATA = {
   },
   
   "Озерки": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -211,6 +234,7 @@ const STATIONS_DATA = {
   },
   
   "Удельная": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -220,6 +244,7 @@ const STATIONS_DATA = {
   },
   
   "Пионерская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -229,6 +254,7 @@ const STATIONS_DATA = {
   },
   
   "Чёрная речка": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -238,6 +264,7 @@ const STATIONS_DATA = {
   },
   
   "Петроградская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -247,6 +274,7 @@ const STATIONS_DATA = {
   },
   
   "Горьковская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -256,6 +284,7 @@ const STATIONS_DATA = {
   },
   
   "Невский проспект": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -265,6 +294,7 @@ const STATIONS_DATA = {
   },
   
   "Сенная площадь": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -274,6 +304,7 @@ const STATIONS_DATA = {
   },
   
   "Фрунзенская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -283,6 +314,7 @@ const STATIONS_DATA = {
   },
   
   "Московские ворота": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -292,6 +324,7 @@ const STATIONS_DATA = {
   },
   
   "Электросила": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -301,6 +334,7 @@ const STATIONS_DATA = {
   },
   
   "Парк Победы": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -310,6 +344,7 @@ const STATIONS_DATA = {
   },
   
   "Московская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -319,6 +354,7 @@ const STATIONS_DATA = {
   },
   
   "Звездная": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -328,6 +364,7 @@ const STATIONS_DATA = {
   },
   
   "Купчино": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -338,6 +375,7 @@ const STATIONS_DATA = {
 
   // ========== НЕВСКО-ВАСИЛЕОСТРОВСКАЯ ЛИНИЯ (Зелёная) ==========
   "Беговая": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -347,6 +385,7 @@ const STATIONS_DATA = {
   },
   
   "Зенит": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -356,6 +395,7 @@ const STATIONS_DATA = {
   },
   
   "Приморская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -365,6 +405,7 @@ const STATIONS_DATA = {
   },
   
   "Василеостровская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -374,6 +415,7 @@ const STATIONS_DATA = {
   },
   
   "Гостиный двор": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -383,6 +425,7 @@ const STATIONS_DATA = {
   },
   
   "Маяковская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -392,6 +435,7 @@ const STATIONS_DATA = {
   },
   
   "Площадь Александра Невского": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -401,6 +445,7 @@ const STATIONS_DATA = {
   },
   
   "Елизаровская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -410,6 +455,7 @@ const STATIONS_DATA = {
   },
   
   "Ломоносовская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -419,6 +465,7 @@ const STATIONS_DATA = {
   },
   
   "Пролетарская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -428,6 +475,7 @@ const STATIONS_DATA = {
   },
   
   "Обухово": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -437,6 +485,7 @@ const STATIONS_DATA = {
   },
   
   "Рыбацкое": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -447,6 +496,7 @@ const STATIONS_DATA = {
 
   // ========== ЛАХТИНСКО-ПРАВОБЕРЕЖНАЯ ЛИНИЯ (Оранжевая) ==========
   "Горный институт": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -456,6 +506,7 @@ const STATIONS_DATA = {
   },
   
   "Спасская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -465,6 +516,7 @@ const STATIONS_DATA = {
   },
   
   "Достоевская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -474,6 +526,7 @@ const STATIONS_DATA = {
   },
   
   "Лиговский проспект": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -483,6 +536,7 @@ const STATIONS_DATA = {
   },
   
   "Площадь Александра Невского": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -492,6 +546,7 @@ const STATIONS_DATA = {
   },
   
   "Новочеркасская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -501,6 +556,7 @@ const STATIONS_DATA = {
   },
   
   "Ладожская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -510,6 +566,7 @@ const STATIONS_DATA = {
   },
   
   "Проспект Большевиков": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -519,6 +576,7 @@ const STATIONS_DATA = {
   },
   
   "Улица Дыбенко": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -529,6 +587,7 @@ const STATIONS_DATA = {
 
   // ========== ФРУНЗЕНСКО-ПРИМОРСКАЯ ЛИНИЯ (Фиолетовая) ==========
   "Комендантский проспект": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -538,6 +597,7 @@ const STATIONS_DATA = {
   },
   
   "Старая Деревня": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -547,6 +607,7 @@ const STATIONS_DATA = {
   },
   
   "Крестовский остров": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -556,6 +617,7 @@ const STATIONS_DATA = {
   },
   
   "Чкаловская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -565,6 +627,7 @@ const STATIONS_DATA = {
   },
   
   "Спортивная": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -574,6 +637,7 @@ const STATIONS_DATA = {
   },
   
   "Адмиралтейская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -583,6 +647,7 @@ const STATIONS_DATA = {
   },
   
   "Садовая": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -592,6 +657,7 @@ const STATIONS_DATA = {
   },
   
   "Звенигородская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -601,6 +667,7 @@ const STATIONS_DATA = {
   },
   
   "Обводный канал": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -610,6 +677,7 @@ const STATIONS_DATA = {
   },
   
   "Волковская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -619,6 +687,7 @@ const STATIONS_DATA = {
   },
   
   "Бухарестская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -628,6 +697,7 @@ const STATIONS_DATA = {
   },
   
   "Международная": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -637,6 +707,7 @@ const STATIONS_DATA = {
   },
   
   "Проспект Славы": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -646,6 +717,7 @@ const STATIONS_DATA = {
   },
   
   "Дунайская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -655,6 +727,7 @@ const STATIONS_DATA = {
   },
   
   "Шушары": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -665,6 +738,7 @@ const STATIONS_DATA = {
 
   // ========== 6 ЛИНИЯ (Коричневая) ==========
   "Путиловская": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
@@ -674,6 +748,7 @@ const STATIONS_DATA = {
   },
   
   "Юго-Западная": {
+    year: ``,
     history: ``,
     architecture: ``,
     facts: [
