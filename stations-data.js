@@ -19,7 +19,7 @@ const STATIONS_DATA = {
   // ========== КИРОВСКО-ВЫБОРГСКАЯ ЛИНИЯ (Красная) ==========
   "Девяткино": {
     folder: `devyatkino`,
-    year: ``,
+    year: `1978`,
     history: ``,
     architecture: ``,
     facts: [
@@ -30,7 +30,7 @@ const STATIONS_DATA = {
 
   "Гражданский проспект": {
     folder: `grazhdanskiyprospekt`,
-    year: ``,
+    year: `1978`,
     history: ``, 
     architecture: ``,
     facts: [
@@ -41,7 +41,7 @@ const STATIONS_DATA = {
   
   "Академическая": {
     folder: `akademicheskaya`,
-    year: ``,
+    year: `1975`,
     history: ``,
     architecture: ``,
     facts: [
@@ -52,7 +52,7 @@ const STATIONS_DATA = {
   
   "Политехническая": {
     folder: `politekhnicheskaya`,
-    year: ``,
+    year: `1975`,
     history: ``,
     architecture: ``,
     facts: [
@@ -63,7 +63,7 @@ const STATIONS_DATA = {
 
   "Площадь Мужества": {
     folder: `ploshchadmuzhestva`,
-    year: ``,
+    year: `1975`,
     history: ``,
     architecture: ``,
     facts: [
@@ -74,7 +74,7 @@ const STATIONS_DATA = {
 
   "Лесная": {
     folder: `lesnaya`,
-    year: ``,
+    year: `1975`,
     history: ``,
     architecture: ``,
     facts: [
@@ -85,7 +85,7 @@ const STATIONS_DATA = {
   
   "Выборгская": {
     folder: `vyborgskaya`,
-    year: ``,
+    year: `1975`,
     history: ``,
     architecture: ``,
     facts: [
@@ -96,7 +96,7 @@ const STATIONS_DATA = {
   
   "Площадь Ленина": {
     folder: `ploshchadlenina`,
-    year: ``,
+    year: `1958`,
     history: ``,
     architecture: ``,
     facts: [
@@ -107,7 +107,7 @@ const STATIONS_DATA = {
   
   "Чернышевская": {
     folder: `chernyshevskaya`,
-    year: ``,
+    year: `1958`,
     history: ``,
     architecture: ``,
     facts: [
@@ -153,7 +153,7 @@ const STATIONS_DATA = {
   
   "Пушкинская": {
     folder: `pushkinskaya`,
-    year: ``,
+    year: `1956`,
     history: ``,
     architecture: ``,
     facts: [
@@ -162,9 +162,9 @@ const STATIONS_DATA = {
     ]
   },
   
-  "Технологический институт": {
-    folder: `tekhnologicheskiyinstitut`,
-    year: ``,
+  "Технологический институт - 1": {
+    folder: `tekhnologicheskiyinstitut1`,
+    year: `1955`,
     history: ``,
     architecture: ``,
     facts: [
@@ -175,7 +175,7 @@ const STATIONS_DATA = {
   
   "Балтийская": {
     folder: `baltiyskaya`,
-    year: ``,
+    year: `1955`,
     history: ``,
     architecture: ``,
     facts: [
@@ -186,7 +186,7 @@ const STATIONS_DATA = {
   
   "Нарвская": {
     folder: `narvskaya`,
-    year: ``,
+    year: `1955`,
     history: ``,
     architecture: ``,
     facts: [
@@ -197,7 +197,7 @@ const STATIONS_DATA = {
   
   "Кировский завод": {
     folder: `kirovskiyzavod`,
-    year: ``,
+    year: `1955`,
     history: ``,
     architecture: ``,
     facts: [
@@ -208,7 +208,7 @@ const STATIONS_DATA = {
   
   "Автово": {
     folder: `avtovo`,
-    year: ``,
+    year: `1955`,
     history: ``,
     architecture: ``,
     facts: [
@@ -219,7 +219,7 @@ const STATIONS_DATA = {
   
   "Ленинский проспект": {
     folder: `leninskiyprospekt`,
-    year: ``,
+    year: `1977`,
     history: ``,
     architecture: ``,
     facts: [
@@ -230,7 +230,7 @@ const STATIONS_DATA = {
   
   "Проспект Ветеранов": {
     folder: `prospektveteranov`,
-    year: ``,
+    year: `1977`,
     history: ``,
     architecture: ``,
     facts: [
@@ -243,12 +243,17 @@ const STATIONS_DATA = {
   "Парнас": {
     folder: `parnas`,
     year: `2005-2006`,
-    history: `Первоначальный проект станции, принятый в 1991 г., позже был отклонён. В 1995 г. был разработан новый проект, с применением в отделке станции композитных материалов. После окончательного принятия решения о строительстве станции в 2005 году проект 1995 г. был переделан - вместо подземных переходов под путями запланированы надземные, предусмотрены лифты для лиц с ограниченными физическими возможностями, на станции также имеются аварийные выходы.`,
+    history: `Первоначальный проект станции, принятый в 1991 г., позже был отклонён. В 1995 г. был разработан новый проект, с применением в отделке станции композитных материалов. После окончательного принятия решения о строительстве станции в 2005 году проект 1995 г. был переделан - вместо подземных переходов под путями запланированы надземные, предусмотрены лифты для лиц с ограниченными физическими возможностями.`,
     architecture: `Тематика оформления станции посвящена древнегреческой мифологии. Станцию украшают художественные витражи, расположенные с южной и северной сторон здания метро. 
-    На главном круглом витраже изображена Ника, на большом тимпане изображена колесница Гелиоса, на двух малых тимпанах, расположенных с северной стороны - похищение Европы и аргонавты.`,
+    На главном круглом витраже изображена Ника, на большом тимпане изображена колесница Гелиоса, на двух малых тимпанах, расположенных с северной стороны - похищение Европы и аргонавты.
+- Ника - в древнегреческой мифологии богиня победы, изображается крылатой, с венком и трофеями. Союзница Зевса в его борьбе с титанами и гигантами. Ника облетала поля битвы, награждая победителей почетом и славой.
+- Гелиос - в древнегреческой мифологии бог солнца. Гелиос вставал с криком петуха, который считался его священной птицей, и направлял свою запряженную четверкой огненных коней колесницу по небесам, ежедневно проделывая путь от дворца на востоке до дворца на западе.
+- Европа - в древнегреческой мифологии дочь финикийского царя. По легенде, Зевс  в виде белого быка похитил её, увезя на своей спине на остров Крит.
+- Аргонавты - в древнегреческой мифологии участники похода в Колхиду на корабле «Арго». Герой из Фессалии Ясон и набранная им команда начали своё путешествие из Иолка (современный Волос) в поисках Золотого руна, которое охранял дракон.`,
     facts: [
-      `В проекте станция носила название «Парнасская»`,
-      `Первое предлжение по постройке станции было еще в 1979 году`
+      `В проекте станция носила название «Парнасская». Название произошло от промзоны, которая получила своё название от исторического названия горы Парнас в Шуваловском парке.`,
+      `Первое предложение по постройке станции было еще в 1979 году`,
+`Во время открытия станция находилась фактически в чистом поле, недалеко от неё было лишь несколько предприятий и торговый центр. Лишь в 2010 году была сдана первая очередь жилого комплекса «Северная долина».`
     ]
   },
   
@@ -273,7 +278,7 @@ const STATIONS_DATA = {
   
   "Удельная": {
     folder: `udelnaya`,
-    year: ``,
+    year: `1982`,
     history: ``,
     architecture: ``,
     facts: [
@@ -284,7 +289,7 @@ const STATIONS_DATA = {
   
   "Пионерская": {
     folder: `pionerskaya`,
-    year: ``,
+    year: `1982`,
     history: ``,
     architecture: ``,
     facts: [
@@ -295,7 +300,7 @@ const STATIONS_DATA = {
   
   "Чёрная речка": {
     folder: `chyornayarechka`,
-    year: ``,
+    year: `1982`,
     history: ``,
     architecture: ``,
     facts: [
@@ -306,7 +311,7 @@ const STATIONS_DATA = {
   
   "Петроградская": {
     folder: `petrogradskaya`,
-    year: ``,
+    year: `1963`,
     history: ``,
     architecture: ``,
     facts: [
@@ -317,7 +322,7 @@ const STATIONS_DATA = {
   
   "Горьковская": {
     folder: `gorkovskaya`,
-    year: ``,
+    year: `1963`,
     history: ``,
     architecture: ``,
     facts: [
@@ -328,7 +333,7 @@ const STATIONS_DATA = {
   
   "Невский проспект": {
     folder: `nevskiyprospekt`,
-    year: ``,
+    year: `1963`,
     history: ``,
     architecture: ``,
     facts: [
@@ -339,7 +344,18 @@ const STATIONS_DATA = {
   
   "Сенная площадь": {
     folder: `sennayaploshchad`,
-    year: ``,
+    year: `1963`,
+    history: ``,
+    architecture: ``,
+    facts: [
+      ``,
+      ``
+    ]
+  },
+
+  "Технологический институт - 2": {
+    folder: `tekhnologicheskiyinstitut2`,
+    year: `1980`,
     history: ``,
     architecture: ``,
     facts: [
@@ -350,7 +366,7 @@ const STATIONS_DATA = {
   
   "Фрунзенская": {
     folder: `frunzenskaya`,
-    year: ``,
+    year: `1961`,
     history: ``,
     architecture: ``,
     facts: [
@@ -361,7 +377,7 @@ const STATIONS_DATA = {
   
   "Московские ворота": {
     folder: `moskovskievorota`,
-    year: ``,
+    year: `1961`,
     history: ``,
     architecture: ``,
     facts: [
@@ -372,7 +388,7 @@ const STATIONS_DATA = {
   
   "Электросила": {
     folder: `elektrosila`,
-    year: ``,
+    year: `1961`,
     history: ``,
     architecture: ``,
     facts: [
@@ -383,7 +399,7 @@ const STATIONS_DATA = {
   
   "Парк Победы": {
     folder: `parkpobedy`,
-    year: ``,
+    year: `1961`,
     history: ``,
     architecture: ``,
     facts: [
@@ -394,7 +410,7 @@ const STATIONS_DATA = {
   
   "Московская": {
     folder: `moskovskaya`,
-    year: ``,
+    year: `1969`,
     history: ``,
     architecture: ``,
     facts: [
@@ -405,7 +421,7 @@ const STATIONS_DATA = {
   
   "Звездная": {
     folder: `zvezdnaya`,
-    year: ``,
+    year: `1972`,
     history: ``,
     architecture: ``,
     facts: [
@@ -416,7 +432,7 @@ const STATIONS_DATA = {
   
   "Купчино": {
     folder: `kupchino`,
-    year: ``,
+    year: `1972`,
     history: ``,
     architecture: ``,
     facts: [
@@ -428,7 +444,7 @@ const STATIONS_DATA = {
   // ========== НЕВСКО-ВАСИЛЕОСТРОВСКАЯ ЛИНИЯ (Зелёная) ==========
   "Беговая": {
     folder: `begovaya`,
-    year: ``,
+    year: `2018`,
     history: ``,
     architecture: ``,
     facts: [
@@ -439,7 +455,7 @@ const STATIONS_DATA = {
   
   "Зенит": {
     folder: `zenit`,
-    year: ``,
+    year: `2018`,
     history: ``,
     architecture: ``,
     facts: [
@@ -450,7 +466,7 @@ const STATIONS_DATA = {
   
   "Приморская": {
     folder: `primorskaya`,
-    year: ``,
+    year: `1979`,
     history: ``,
     architecture: ``,
     facts: [
@@ -461,7 +477,7 @@ const STATIONS_DATA = {
   
   "Василеостровская": {
     folder: `vasileostrovskaya`,
-    year: ``,
+    year: `1967`,
     history: ``,
     architecture: ``,
     facts: [
@@ -472,7 +488,7 @@ const STATIONS_DATA = {
   
   "Гостиный двор": {
     folder: `gostinyydvor`,
-    year: ``,
+    year: `1967`,
     history: ``,
     architecture: ``,
     facts: [
@@ -483,7 +499,7 @@ const STATIONS_DATA = {
   
   "Маяковская": {
     folder: `mayakovskaya`,
-    year: ``,
+    year: `1967`,
     history: ``,
     architecture: ``,
     facts: [
@@ -492,9 +508,9 @@ const STATIONS_DATA = {
     ]
   },
   
-  "Площадь Александра Невского": {
-    folder: `ploshchadaleksandranevskogo`,
-    year: ``,
+  "Площадь Александра Невского - 1": {
+    folder: `ploshchadaleksandranevskogo1`,
+    year: `1967`,
     history: ``,
     architecture: ``,
     facts: [
@@ -516,7 +532,7 @@ const STATIONS_DATA = {
   
   "Ломоносовская": {
     folder: `lomonosovskaya`,
-    year: ``,
+    year: `1970`,
     history: ``,
     architecture: ``,
     facts: [
@@ -527,7 +543,7 @@ const STATIONS_DATA = {
   
   "Пролетарская": {
     folder: `proletarskaya`,
-    year: ``,
+    year: `1981`,
     history: ``,
     architecture: ``,
     facts: [
@@ -538,7 +554,7 @@ const STATIONS_DATA = {
   
   "Обухово": {
     folder: `obukhovo`,
-    year: ``,
+    year: `1981`,
     history: ``,
     architecture: ``,
     facts: [
@@ -549,7 +565,7 @@ const STATIONS_DATA = {
   
   "Рыбацкое": {
     folder: `rybatskoye`,
-    year: ``,
+    year: `1984`,
     history: ``,
     architecture: ``,
     facts: [
@@ -561,7 +577,7 @@ const STATIONS_DATA = {
   // ========== ЛАХТИНСКО-ПРАВОБЕРЕЖНАЯ ЛИНИЯ (Оранжевая) ==========
   "Горный институт": {
     folder: `gornyyinstitut`,
-    year: ``,
+    year: `2024`,
     history: ``,
     architecture: ``,
     facts: [
@@ -572,7 +588,7 @@ const STATIONS_DATA = {
   
   "Спасская": {
     folder: `spasskaya`,
-    year: ``,
+    year: `2009`,
     history: ``,
     architecture: ``,
     facts: [
@@ -583,7 +599,7 @@ const STATIONS_DATA = {
   
   "Достоевская": {
     folder: `dostoevskaya`,
-    year: ``,
+    year: `1991`,
     history: ``,
     architecture: ``,
     facts: [
@@ -594,7 +610,7 @@ const STATIONS_DATA = {
   
   "Лиговский проспект": {
     folder: `ligovskiyprospekt`,
-    year: ``,
+    year: `1991`,
     history: ``,
     architecture: ``,
     facts: [
@@ -603,9 +619,9 @@ const STATIONS_DATA = {
     ]
   },
   
-  "Площадь Александра Невского": {
-    folder: `ploshchadaleksandranevskogo`,
-    year: ``,
+  "Площадь Александра Невского - 2": {
+    folder: `ploshchadaleksandranevskogo2`,
+    year: `1985`,
     history: ``,
     architecture: ``,
     facts: [
@@ -616,7 +632,7 @@ const STATIONS_DATA = {
   
   "Новочеркасская": {
     folder: `novocherkasskaya`,
-    year: ``,
+    year: `1985`,
     history: ``,
     architecture: ``,
     facts: [
@@ -627,7 +643,7 @@ const STATIONS_DATA = {
   
   "Ладожская": {
     folder: `ladozhskaya`,
-    year: ``,
+    year: `1985`,
     history: ``,
     architecture: ``,
     facts: [
@@ -638,7 +654,7 @@ const STATIONS_DATA = {
   
   "Проспект Большевиков": {
     folder: `prospektbolshevikov`,
-    year: ``,
+    year: `1982`,
     history: ``,
     architecture: ``,
     facts: [
@@ -649,7 +665,7 @@ const STATIONS_DATA = {
   
   "Улица Дыбенко": {
     folder: `ulitsadybenko`,
-    year: ``,
+    year: `1987`,
     history: ``,
     architecture: ``,
     facts: [
@@ -661,7 +677,7 @@ const STATIONS_DATA = {
   // ========== ФРУНЗЕНСКО-ПРИМОРСКАЯ ЛИНИЯ (Фиолетовая) ==========
   "Комендантский проспект": {
     folder: `komendantskiyprospekt`,
-    year: ``,
+    year: `2005`,
     history: ``,
     architecture: ``,
     facts: [
@@ -672,7 +688,7 @@ const STATIONS_DATA = {
   
   "Старая Деревня": {
     folder: `starayaderevnya`,
-    year: ``,
+    year: `1999`,
     history: ``,
     architecture: ``,
     facts: [
@@ -683,7 +699,7 @@ const STATIONS_DATA = {
   
   "Крестовский остров": {
     folder: `krestovskiyostrov`,
-    year: ``,
+    year: `1999`,
     history: ``,
     architecture: ``,
     facts: [
@@ -694,7 +710,7 @@ const STATIONS_DATA = {
   
   "Чкаловская": {
     folder: `chkalovskaya`,
-    year: ``,
+    year: `1997`,
     history: ``,
     architecture: ``,
     facts: [
@@ -705,7 +721,7 @@ const STATIONS_DATA = {
   
   "Спортивная": {
     folder: `sportivnaya`,
-    year: ``,
+    year: `1997`,
     history: ``,
     architecture: ``,
     facts: [
@@ -716,7 +732,7 @@ const STATIONS_DATA = {
   
   "Адмиралтейская": {
     folder: `admiralteyskaya`,
-    year: ``,
+    year: `2011`,
     history: ``,
     architecture: ``,
     facts: [
@@ -727,7 +743,7 @@ const STATIONS_DATA = {
   
   "Садовая": {
     folder: `sadovaya`,
-    year: ``,
+    year: `1991`,
     history: ``,
     architecture: ``,
     facts: [
@@ -738,7 +754,7 @@ const STATIONS_DATA = {
   
   "Звенигородская": {
     folder: `zvenigorodskaya`,
-    year: ``,
+    year: `2008`,
     history: ``,
     architecture: ``,
     facts: [
@@ -749,7 +765,7 @@ const STATIONS_DATA = {
   
   "Обводный канал": {
     folder: `obvodnyykanal`,
-    year: ``,
+    year: `2010`,
     history: ``,
     architecture: ``,
     facts: [
@@ -760,7 +776,7 @@ const STATIONS_DATA = {
   
   "Волковская": {
     folder: `volkovskaya`,
-    year: ``,
+    year: `2008`,
     history: ``,
     architecture: ``,
     facts: [
@@ -771,7 +787,7 @@ const STATIONS_DATA = {
   
   "Бухарестская": {
     folder: `bukharetskaya`,
-    year: ``,
+    year: `2013`,
     history: ``,
     architecture: ``,
     facts: [
@@ -782,7 +798,7 @@ const STATIONS_DATA = {
   
   "Международная": {
     folder: `mezhdunarodnaya`,
-    year: ``,
+    year: `2013`,
     history: ``,
     architecture: ``,
     facts: [
@@ -793,7 +809,7 @@ const STATIONS_DATA = {
   
   "Проспект Славы": {
     folder: `prospektslavy`,
-    year: ``,
+    year: `2019`,
     history: ``,
     architecture: ``,
     facts: [
@@ -804,7 +820,7 @@ const STATIONS_DATA = {
   
   "Дунайская": {
     folder: `dunayskaya`,
-    year: ``,
+    year: `2019`,
     history: ``,
     architecture: ``,
     facts: [
@@ -815,7 +831,7 @@ const STATIONS_DATA = {
   
   "Шушары": {
     folder: `shushary`,
-    year: ``,
+    year: `2019`,
     history: ``,
     architecture: ``,
     facts: [
@@ -827,7 +843,7 @@ const STATIONS_DATA = {
   // ========== 6 ЛИНИЯ (Коричневая) ==========
   "Путиловская": {
     folder: `putilovskaya`,
-    year: ``,
+    year: `2025`,
     history: ``,
     architecture: ``,
     facts: [
@@ -838,7 +854,7 @@ const STATIONS_DATA = {
   
   "Юго-Западная": {
     folder: `yugozapadnaya`,
-    year: ``,
+    year: `2025`,
     history: ``,
     architecture: ``,
     facts: [
