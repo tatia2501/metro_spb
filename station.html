@@ -86,6 +86,10 @@
     <!-- Header -->
     <header class="pt-20 pb-6 px-4 text-center">
         <div id="station-header" class="max-w-2xl mx-auto">
+            <div class="flex items-center justify-center gap-3 mb-3">
+                <span id="line-indicator" class="line-indicator"></span>
+                <span id="line-name" class="text-sm font-medium text-slate-400"></span>
+            </div>
             <h1 id="station-title" class="text-3xl md:text-4xl font-bold text-white mb-3"></h1>
             
             <!-- Year Badge -->
@@ -178,8 +182,35 @@
     <script src="stations-data.js"></script>
 
     <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+        // === Безопасная инициализация иконок ===
+        try {
+            lucide.createIcons();
+        } catch (e) {
+            console.warn('Lucide icons not loaded:', e);
+        }
+
+        // === Маппинг названий станций (для дублей с -1 / -2) ===
+        const STATION_NAME_MAPPING = {
+            "Технологический институт": "Технологический институт - 1",
+            "Площадь Александра Невского": "Площадь Александра Невского - 1",
+        };
+
+        // Функция получения правильного ключа из данных
+        function getStationKey(name, line = null) {
+            if (STATIONS_DATA[name]) return name;
+            if (STATION_NAME_MAPPING[name] && !line) {
+                return STATION_NAME_MAPPING[name];
+            }
+            if (line) {
+                if (name === "Технологический институт") {
+                    return line === 'blue' ? "Технологический институт - 2" : "Технологический институт - 1";
+                }
+                if (name === "Площадь Александра Невского") {
+                    return line === 'orange' ? "Площадь Александра Невского - 2" : "Площадь Александра Невского - 1";
+                }
+            }
+            return name;
+        }
 
         // Цвета линий для индикатора
         const lineColors = {
@@ -205,7 +236,7 @@
         function formatText(text) {
             if (!text) return '';
             return text
-                .split('\n')
+                .split('\n')  // ✅ Правильно: обратный слэш + n
                 .filter(line => line.trim())
                 .map(line => `<p>${line.trim()}</p>`)
                 .join('');
@@ -213,113 +244,130 @@
 
         // Загрузка данных станции
         function loadStation() {
-            // Получаем название станции из URL параметра
-            const params = new URLSearchParams(window.location.search);
-            const stationName = params.get('name');
-            
-            const loading = document.getElementById('loading');
-            const error = document.getElementById('error');
-            const content = document.getElementById('content');
-            
-            if (!stationName) {
-                loading.classList.add('hidden');
-                error.classList.remove('hidden');
-                return;
-            }
-            
-            // Ищем данные в объекте STATIONS_DATA
-            const data = STATIONS_DATA[stationName];
-            
-            if (!data) {
-                loading.classList.add('hidden');
-                error.classList.remove('hidden');
-                return;
-            }
-            
-            // Заполняем заголовок
-            document.getElementById('station-title').textContent = stationName;
-            document.getElementById('station-short').textContent = data.info || '';
-            
-            // === НОВОЕ: Отображение года открытия ===
-            const yearElement = document.getElementById('station-year');
-            const yearContainer = document.getElementById('year-container');
-            
-            if (data.year && data.year.trim()) {
-                yearElement.textContent = data.year;
-                yearElement.classList.remove('italic', 'text-slate-600');
-                yearContainer.classList.remove('hidden');
-            } else {
-                yearElement.textContent = 'не указан';
-                yearElement.classList.add('italic', 'text-slate-600');
-                // Можно скрыть бейдж, если год не важен:
-                // yearContainer.classList.add('hidden');
-            }
-            // ========================================
-            
-            // Определяем линию станции (упрощённый поиск)
-            let stationLine = 'red'; // по умолчанию
-            for (const [name, color] of Object.entries(lineColors)) {
-                if (stationName.includes('Кировско') || stationName.includes('Девяткино') || 
-                    stationName.includes('Проспект Ветеранов') || stationName.includes('Автово')) {
-                    stationLine = 'red';
-                    break;
-                } else if (stationName.includes('Парнас') || stationName.includes('Купчино') || 
-                          stationName.includes('Московская') || stationName.includes('Петроградская')) {
-                    stationLine = 'blue';
-                    break;
-                } else if (stationName.includes('Беговая') || stationName.includes('Рыбацкое') || 
-                          stationName.includes('Василеостровская') || stationName.includes('Гостиный')) {
-                    stationLine = 'green';
-                    break;
-                } else if (stationName.includes('Горный институт') || stationName.includes('Улица Дыбенко') || 
-                          stationName.includes('Спасская') || stationName.includes('Достоевская')) {
-                    stationLine = 'orange';
-                    break;
-                } else if (stationName.includes('Комендантский') || stationName.includes('Шушары') || 
-                          stationName.includes('Адмиралтейская') || stationName.includes('Садовая')) {
-                    stationLine = 'purple';
-                    break;
+            try {
+                const params = new URLSearchParams(window.location.search);
+                const stationName = params.get('name');
+                const stationLine = params.get('line');
+                
+                const loading = document.getElementById('loading');
+                const error = document.getElementById('error');
+                const content = document.getElementById('content');
+                
+                if (!stationName) {
+                    console.error('❌ Нет параметра name в URL');
+                    loading.classList.add('hidden');
+                    error.classList.remove('hidden');
+                    return;
                 }
+                
+                // Проверка: существует ли объект с данными
+                if (typeof STATIONS_DATA === 'undefined') {
+                    console.error('❌ Файл stations-data.js не загружен!');
+                    loading.classList.add('hidden');
+                    error.querySelector('h2').textContent = 'Ошибка загрузки';
+                    error.querySelector('p').textContent = 'Не удалось загрузить данные о станциях';
+                    error.classList.remove('hidden');
+                    return;
+                }
+                
+                // Получаем правильный ключ для поиска данных
+                const dataKey = getStationKey(stationName, stationLine);
+                const data = STATIONS_DATA[dataKey];
+                
+                if (!data) {
+                    console.error('❌ Станция не найдена:', stationName, '(искали ключ: ' + dataKey + ')');
+                    console.log('📋 Доступные станции:', Object.keys(STATIONS_DATA).slice(0, 10), '...');
+                    loading.classList.add('hidden');
+                    error.classList.remove('hidden');
+                    return;
+                }
+                
+                // Заполняем заголовок
+                document.getElementById('station-title').textContent = stationName;
+                document.getElementById('station-short').textContent = data.info || '';
+                
+                // === Год открытия ===
+                const yearElement = document.getElementById('station-year');
+                const yearContainer = document.getElementById('year-container');
+                if (data.year && data.year.trim()) {
+                    yearElement.textContent = data.year;
+                    yearElement.classList.remove('italic', 'text-slate-600');
+                    yearContainer.classList.remove('hidden');
+                } else {
+                    yearElement.textContent = 'не указан';
+                    yearElement.classList.add('italic', 'text-slate-600');
+                }
+                
+                // === Определяем линию станции ===
+                let stationLineDetected = 'red';
+                if (stationName.includes('Парнас') || stationName.includes('Купчино') || 
+                    stationName.includes('Московская') || stationName.includes('Петроградская') ||
+                    stationName.includes('Горьковская') || stationName.includes('Сенная')) {
+                    stationLineDetected = 'blue';
+                } else if (stationName.includes('Беговая') || stationName.includes('Рыбацкое') || 
+                          stationName.includes('Василеостровская') || stationName.includes('Гостиный') ||
+                          stationName.includes('Маяковская') || stationName.includes('Елизаровская')) {
+                    stationLineDetected = 'green';
+                } else if (stationName.includes('Горный институт') || stationName.includes('Дыбенко') || 
+                          stationName.includes('Спасская') || stationName.includes('Достоевская') ||
+                          stationName.includes('Ладожская') || stationName.includes('Новочеркасская')) {
+                    stationLineDetected = 'orange';
+                } else if (stationName.includes('Комендантский') || stationName.includes('Шушары') || 
+                          stationName.includes('Адмиралтейская') || stationName.includes('Садовая') ||
+                          stationName.includes('Звенигородская') || stationName.includes('Спортивная')) {
+                    stationLineDetected = 'purple';
+                }
+                
+                document.getElementById('line-indicator').style.backgroundColor = lineColors[stationLineDetected];
+                document.getElementById('line-name').textContent = lineNames[stationLineDetected];
+                
+                // === Заполняем раздел "История" ===
+                const historyContent = document.getElementById('history-content');
+                if (data.history && data.history.trim()) {
+                    historyContent.innerHTML = formatText(data.history);
+                } else {
+                    historyContent.innerHTML = '<p class="text-slate-500 italic">Информация об истории станции будет добавлена позже...</p>';
+                }
+                
+                // === Заполняем раздел "Архитектура" ===
+                const architectureContent = document.getElementById('architecture-content');
+                if (data.architecture && data.architecture.trim()) {
+                    architectureContent.innerHTML = formatText(data.architecture);
+                } else {
+                    architectureContent.innerHTML = '<p class="text-slate-500 italic">Информация об архитектуре станции будет добавлена позже...</p>';
+                }
+                
+                // === Заполняем раздел "Факты" ===
+                const factsContent = document.getElementById('facts-content');
+                if (data.facts && data.facts.length > 0 && data.facts.some(f => f && f.trim())) {
+                    factsContent.innerHTML = data.facts
+                        .filter(fact => fact && fact.trim())
+                        .map(fact => `<p class="fact-item text-slate-300">${fact}</p>`)
+                        .join('');
+                } else {
+                    factsContent.innerHTML = '<p class="text-slate-500 italic fact-item">Интересные факты будут добавлены позже...</p>';
+                }
+                
+                // === Показываем контент, скрываем загрузку ===
+                loading.classList.add('hidden');
+                content.classList.remove('hidden');
+                
+            } catch (err) {
+                console.error('💥 Ошибка при загрузке станции:', err);
+                document.getElementById('loading').classList.add('hidden');
+                const error = document.getElementById('error');
+                error.classList.remove('hidden');
+                error.querySelector('h2').textContent = 'Ошибка';
+                error.querySelector('p').textContent = 'Не удалось загрузить информацию о станции. Проверьте консоль для деталей.';
             }
-            
-            // Устанавливаем цвет линии
-            document.getElementById('line-indicator').style.backgroundColor = lineColors[stationLine];
-            document.getElementById('line-name').textContent = lineNames[stationLine];
-            
-            // Заполняем раздел "История"
-            const historyContent = document.getElementById('history-content');
-            if (data.history && data.history.trim()) {
-                historyContent.innerHTML = formatText(data.history);
-            } else {
-                historyContent.innerHTML = '<p class="text-slate-500 italic">Информация об истории станции будет добавлена позже...</p>';
-            }
-            
-            // Заполняем раздел "Архитектура"
-            const architectureContent = document.getElementById('architecture-content');
-            if (data.architecture && data.architecture.trim()) {
-                architectureContent.innerHTML = formatText(data.architecture);
-            } else {
-                architectureContent.innerHTML = '<p class="text-slate-500 italic">Информация об архитектуре станции будет добавлена позже...</p>';
-            }
-            
-            // Заполняем раздел "Факты"
-            const factsContent = document.getElementById('facts-content');
-            if (data.facts && data.facts.length > 0 && data.facts.some(f => f && f.trim())) {
-                factsContent.innerHTML = data.facts
-                    .filter(fact => fact && fact.trim())
-                    .map(fact => `<p class="fact-item text-slate-300">${fact}</p>`)
-                    .join('');
-            } else {
-                factsContent.innerHTML = '<p class="text-slate-500 italic fact-item">Интересные факты будут добавлены позже...</p>';
-            }
-            
-            // Показываем контент, скрываем загрузку
-            loading.classList.add('hidden');
-            content.classList.remove('hidden');
         }
 
-        // Загружаем данные при готовности страницы
-        document.addEventListener('DOMContentLoaded', loadStation);
+        // Запускаем загрузку после готовности DOM
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadStation);
+        } else {
+            loadStation();
+        }
     </script>
 </body>
 </html>
