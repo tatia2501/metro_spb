@@ -14,29 +14,10 @@
             background-color: #0f172a;
         }
         
-        .section-card {
+        .content-card {
             background: linear-gradient(145deg, #1e293b, #0f172a);
             border: 1px solid #334155;
             transition: all 0.3s ease;
-        }
-        
-        .section-card:hover {
-            border-color: #64748b;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .fact-item {
-            position: relative;
-            padding-left: 24px;
-        }
-        
-        .fact-item::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #94a3b8;
-            font-size: 20px;
-            line-height: 1;
         }
         
         .back-btn {
@@ -125,46 +106,14 @@
         </div>
     </div>
 
-    <!-- Content Sections -->
+    <!-- Content Section (Single Block) -->
     <main id="content" class="hidden flex-1 px-4 pb-8">
-        <div class="max-w-2xl mx-auto space-y-4">
+        <div class="max-w-2xl mx-auto">
             
-            <!-- History Section -->
-            <section class="section-card rounded-2xl p-6">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="p-2 bg-amber-500/20 rounded-lg">
-                        <i data-lucide="book-open" class="w-5 h-5 text-amber-400"></i>
-                    </div>
-                    <h2 class="text-xl font-bold text-white">История</h2>
-                </div>
-                <div id="history-content" class="text-slate-300 leading-relaxed space-y-3">
+            <!-- Single Content Card -->
+            <section class="content-card rounded-2xl p-6">
+                <div id="station-content" class="text-slate-300 leading-relaxed space-y-4">
                     <!-- Content will be inserted here -->
-                </div>
-            </section>
-
-            <!-- Architecture Section -->
-            <section class="section-card rounded-2xl p-6">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="p-2 bg-purple-500/20 rounded-lg">
-                        <i data-lucide="building-2" class="w-5 h-5 text-purple-400"></i>
-                    </div>
-                    <h2 class="text-xl font-bold text-white">Архитектура</h2>
-                </div>
-                <div id="architecture-content" class="text-slate-300 leading-relaxed space-y-3">
-                    <!-- Content will be inserted here -->
-                </div>
-            </section>
-
-            <!-- Facts Section -->
-            <section class="section-card rounded-2xl p-6">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="p-2 bg-emerald-500/20 rounded-lg">
-                        <i data-lucide="lightbulb" class="w-5 h-5 text-emerald-400"></i>
-                    </div>
-                    <h2 class="text-xl font-bold text-white">Интересные факты</h2>
-                </div>
-                <div id="facts-content" class="space-y-3">
-                    <!-- Facts will be inserted here -->
                 </div>
             </section>
 
@@ -236,7 +185,7 @@
         function formatText(text) {
             if (!text) return '';
             return text
-                .split('\n')  // ✅ Правильно: обратный слэш + n
+                .split('\n')
                 .filter(line => line.trim())
                 .map(line => `<p>${line.trim()}</p>`)
                 .join('');
@@ -284,7 +233,7 @@
                 
                 // Заполняем заголовок
                 document.getElementById('station-title').textContent = stationName;
-                document.getElementById('station-short').textContent = data.info || '';
+                document.getElementById('station-short').textContent = '';
                 
                 // === Год открытия ===
                 const yearElement = document.getElementById('station-year');
@@ -321,31 +270,12 @@
                 document.getElementById('line-indicator').style.backgroundColor = lineColors[stationLineDetected];
                 document.getElementById('line-name').textContent = lineNames[stationLineDetected];
                 
-                // === Заполняем раздел "История" ===
-                const historyContent = document.getElementById('history-content');
+                // === Заполняем единственный блок контента ===
+                const stationContent = document.getElementById('station-content');
                 if (data.history && data.history.trim()) {
-                    historyContent.innerHTML = formatText(data.history);
+                    stationContent.innerHTML = formatText(data.history);
                 } else {
-                    historyContent.innerHTML = '<p class="text-slate-500 italic">Информация об истории станции будет добавлена позже...</p>';
-                }
-                
-                // === Заполняем раздел "Архитектура" ===
-                const architectureContent = document.getElementById('architecture-content');
-                if (data.architecture && data.architecture.trim()) {
-                    architectureContent.innerHTML = formatText(data.architecture);
-                } else {
-                    architectureContent.innerHTML = '<p class="text-slate-500 italic">Информация об архитектуре станции будет добавлена позже...</p>';
-                }
-                
-                // === Заполняем раздел "Факты" ===
-                const factsContent = document.getElementById('facts-content');
-                if (data.facts && data.facts.length > 0 && data.facts.some(f => f && f.trim())) {
-                    factsContent.innerHTML = data.facts
-                        .filter(fact => fact && fact.trim())
-                        .map(fact => `<p class="fact-item text-slate-300">${fact}</p>`)
-                        .join('');
-                } else {
-                    factsContent.innerHTML = '<p class="text-slate-500 italic fact-item">Интересные факты будут добавлены позже...</p>';
+                    stationContent.innerHTML = '<p class="text-slate-500 italic">Информация о станции будет добавлена позже...</p>';
                 }
                 
                 // === Показываем контент, скрываем загрузку ===
